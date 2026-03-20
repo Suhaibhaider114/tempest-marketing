@@ -1,0 +1,2153 @@
+# ============================================================
+# TEMPEST MARKETING — Universal Apache .htaccess
+# Works on: cPanel, Hostinger, GoDaddy, Bluehost, SiteGround,
+#           Namecheap, DreamHost, and any Apache-based host
+# ============================================================
+
+Options -Indexes
+Options -MultiViews
+
+# ── CLEAN URLs (remove .html extension) ──────────────────────
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^\.]+)$ $1.html [NC,L]
+
+# ── REMOVE TRAILING SLASH ────────────────────────────────────
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)/$ /$1 [R=301,L]
+
+# ── FORCE HTTPS (enable when you have SSL) ───────────────────
+# RewriteCond %{HTTPS} off
+# RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# ── CUSTOM 404 PAGE ──────────────────────────────────────────
+ErrorDocument 404 /index.html
+
+# ── GZIP COMPRESSION ─────────────────────────────────────────
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css text/javascript
+  AddOutputFilterByType DEFLATE image/svg+xml application/javascript
+</IfModule>
+
+# ── BROWSER CACHING ──────────────────────────────────────────
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/html "access plus 1 hour"
+  ExpiresByType text/css "access plus 1 week"
+  ExpiresByType application/javascript "access plus 1 week"
+  ExpiresByType image/svg+xml "access plus 1 month"
+</IfModule>
+
+# ── SECURITY HEADERS ─────────────────────────────────────────
+<IfModule mod_headers.c>
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="theme-color" content="#080C16">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>About Us — Tempest Marketing | AI-Powered Growth Infrastructure</title>
+<meta name="description" content="Tempest Marketing is a U.S.-based growth infrastructure company. We build AI-powered appointment systems for high-ticket businesses — and guarantee 20 qualified meetings in 60 days.">
+<link rel="stylesheet" href="../style.css">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<link rel="shortcut icon" href="../favicon.svg">
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <a href="../index.html" class="nav-logo">TEMPEST<span>MARKETING</span></a>
+  <div class="nav-links" id="nl">
+    <a href="../index.html">Home</a>
+    <a href="../infrastructure/index.html">How It Works</a>
+    <a href="../about/index.html" class="active">About</a>
+    <a href="../pricing/index.html">Pricing</a>
+    <a href="../contact/index.html" class="nav-btn">Book a Call</a>
+  </div>
+  <button class="hamburger" id="hb" aria-label="Menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<section class="page-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="../index.html">Home</a><span class="breadcrumb-sep">/</span><span>About Us</span></div>
+    <div class="eyebrow">About Tempest Marketing</div>
+    <h1 class="page-h1">We Build Systems.<br><span class="e">You Close Deals.</span></h1>
+    <p class="page-sub">Tempest Marketing is a U.S.-based growth infrastructure company. We specialize in one thing: building AI-powered appointment systems that deliver qualified, booked meetings for high-ticket businesses — backed by a result-or-refund guarantee.</p>
+  </div>
+</section>
+
+<!-- MISSION -->
+<section class="section">
+  <div class="container">
+    <div class="about-mission sr">
+      <div class="mission-text">
+        <div class="eyebrow">Our Mission</div>
+        <h2 class="h2">Infrastructure That<br><span class="e">Delivers, Not Promises.</span></h2>
+        <p class="lead">Most marketing agencies sell you deliverables — ad campaigns, funnels, content, and reports. We sell you one thing: qualified appointments on your calendar, with a contractual guarantee behind every deployment.</p>
+        <p style="color:var(--silver);font-size:15px;line-height:1.8;margin-top:18px;font-weight:300">We built Tempest Marketing because we kept seeing the same problem in high-ticket businesses across real estate, consulting, and agency verticals. The lead generation was working. The offers were strong. The closers were capable. But the pipeline was broken — not because of the product, but because of the gap between a prospect submitting a form and a human picking up the phone.</p>
+        <p style="color:var(--silver);font-size:15px;line-height:1.8;margin-top:16px;font-weight:300">That gap — in most businesses — is measured in hours. In our system, it is measured in minutes. That difference alone changes the entire trajectory of a business's growth.</p>
+      </div>
+      <div class="mission-quote">
+        <blockquote class="bq">
+          <p>"The average business takes 47 hours to follow up with an inbound lead. The first business to respond wins 78% of all deals. We close that gap — permanently."</p>
+          <cite>Tempest Marketing</cite>
+        </blockquote>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT WE DO -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-header sr">
+      <div class="eyebrow">What We Do</div>
+      <h2 class="h2">One System. <span class="e">Guaranteed Results.</span></h2>
+      <p class="lead">We do not manage ad accounts. We do not write blog content. We do not run social media. We build one thing — a fully automated appointment infrastructure — and we guarantee it performs.</p>
+    </div>
+    <div class="what-grid">
+      <div class="what-card sr">
+        <div class="what-num">01</div>
+        <h3 class="what-title">AI-Powered Speed-to-Lead</h3>
+        <p class="what-body">We deploy AI systems that respond to every inbound lead within 3–5 minutes, 24 hours a day. The technology eliminates the single biggest leak in most high-ticket pipelines: slow follow-up.</p>
+      </div>
+      <div class="what-card sr sr-d1">
+        <div class="what-num">02</div>
+        <h3 class="what-title">Automated Qualification</h3>
+        <p class="what-body">Our AI engages prospects in natural, conversational dialogue — verifying budget, timeline, and fit before any human interaction occurs. Your team only speaks with people who are genuinely ready.</p>
+      </div>
+      <div class="what-card sr sr-d2">
+        <div class="what-num">03</div>
+        <h3 class="what-title">Direct Calendar Booking</h3>
+        <p class="what-body">Qualified prospects are booked directly onto your calendar with full context notes attached. No scheduling friction. No back-and-forth. No leads falling through cracks.</p>
+      </div>
+      <div class="what-card sr sr-d3">
+        <div class="what-num">04</div>
+        <h3 class="what-title">Full System Ownership Transfer</h3>
+        <p class="what-body">Once deployed and live, the entire AI infrastructure becomes your business asset. We do not lock you into retainers. You own the system, the scripts, and the workflow outright.</p>
+      </div>
+      <div class="what-card sr sr-d4">
+        <div class="what-num">05</div>
+        <h3 class="what-title">The 60-Day Guarantee</h3>
+        <p class="what-body">Every deployment is backed by our unambiguous performance guarantee: 20 qualified appointments in 60 days, or a full refund of your setup fee. No conditions. No exceptions. We carry the risk.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VALUES -->
+<section class="section">
+  <div class="container">
+    <div class="section-header sr">
+      <div class="eyebrow">How We Operate</div>
+      <h2 class="h2">The Principles Behind<br><span class="e">Every Deployment.</span></h2>
+    </div>
+    <div class="values-grid">
+      <div class="value-card sr">
+        <div class="value-icon">⚡</div>
+        <h3 class="value-title">Speed is Infrastructure</h3>
+        <p class="value-body">Every system we build is engineered around one core principle: the fastest response wins. Speed-to-lead is not a tactic — it is the foundation of everything we build.</p>
+      </div>
+      <div class="value-card sr sr-d1">
+        <div class="value-icon">🎯</div>
+        <h3 class="value-title">Outcomes Over Deliverables</h3>
+        <p class="value-body">We measure success in qualified appointments booked and revenue generated — not impressions, clicks, or reports. If the outcome is not there, neither is our payment. It is that simple.</p>
+      </div>
+      <div class="value-card sr sr-d2">
+        <div class="value-icon">🔒</div>
+        <h3 class="value-title">Transparency at Every Stage</h3>
+        <p class="value-body">You see exactly what we build, how it works, and what it costs to maintain. No black boxes. No hidden fees. No dependency structures designed to keep you paying us indefinitely.</p>
+      </div>
+      <div class="value-card sr sr-d3">
+        <div class="value-icon">📐</div>
+        <h3 class="value-title">Precision Over Volume</h3>
+        <p class="value-body">We do not work with every business that applies. We accept clients in verticals where we have proven, repeatable results — and where our guarantee is one we can stand behind without hesitation.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LEGAL / TRUST SECTION -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="trust-block sr">
+      <div class="eyebrow">Company &amp; Legal</div>
+      <h2 class="h2">A U.S.-Registered Business.<br><span class="e">Built for U.S. Clients.</span></h2>
+      <div class="trust-cols">
+        <div class="trust-col">
+          <h3 class="trust-col-title">Legal Structure</h3>
+          <p>Tempest Marketing operates as a registered trade name (DBA) of <strong>Tempest Dispatch LLC</strong>, a limited liability company incorporated in the State of Wyoming, United States.</p>
+          <p style="margin-top:12px">Our registered business address is <strong>30 N Gould St, Sheridan, Wyoming 82801, United States</strong>. We serve clients across all 50 U.S. states and are fully compliant with applicable federal and state business regulations.</p>
+        </div>
+        <div class="trust-col">
+          <h3 class="trust-col-title">Payment &amp; Compliance</h3>
+          <p>We accept payments via <strong>credit card, debit card, ACH bank transfer, and wire transfer</strong>. All transactions are processed through secure, compliant payment infrastructure in accordance with applicable U.S. financial regulations.</p>
+          <p style="margin-top:12px">Our pricing is transparent and fixed. There are no hidden fees, no automatic renewals, and no subscription structures embedded in our setup agreements without explicit written consent.</p>
+        </div>
+        <div class="trust-col">
+          <h3 class="trust-col-title">Client Commitment</h3>
+          <p>Every client engagement begins with a signed service agreement that defines deliverables, timelines, qualification criteria, and the exact terms of our 60-day performance guarantee.</p>
+          <p style="margin-top:12px">If we do not deliver the agreed outcome, the refund process is initiated without negotiation or delay. Our guarantee is contractual — not a marketing claim.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section">
+  <div class="container">
+    <div class="cta-block sr">
+      <div class="eyebrow">Ready to Work With Us?</div>
+      <h2 class="h2">Let's Build Your<br><span class="e">Appointment Engine.</span></h2>
+      <p class="lead" style="margin:0 auto 36px">Book a 30-minute strategy call. We will assess your current pipeline, walk through the system, and tell you honestly whether we are the right fit for your business.</p>
+      <div class="cta-btns">
+        <a href="../contact/index.html" class="btn btn-primary btn-lg">Book a Strategy Call</a>
+        <a href="../pricing/index.html" class="btn btn-outline btn-lg">View Pricing →</a>
+      </div>
+      <div class="cta-dots">
+        <span>No commitment required</span><span class="cta-dot-sep">·</span>
+        <span>30-minute session</span><span class="cta-dot-sep">·</span>
+        <span>Honest fit assessment</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="footer-logo">TEMPEST<span>MARKETING</span></div>
+      <p class="footer-tagline">AI-powered appointment infrastructure for real estate professionals, marketing agencies, and B2B service firms. 20 qualified appointments in 60 days — guaranteed.</p>
+      <p class="footer-credline">Serving clients across the United States.</p>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Navigation</div>
+      <a href="../index.html">Home</a><a href="../infrastructure/index.html">How It Works</a><a href="../about/index.html">About Us</a><a href="../pricing/index.html">Pricing &amp; Guarantee</a><a href="../contact/index.html">Book a Call</a>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Contact</div>
+      <a href="tel:+13074004521">+1 (307) 400-4521</a>
+      <a href="mailto:info@tempestmarketing.com">info@tempestmarketing.com</a>
+      <a href="mailto:sales@tempestmarketing.com">sales@tempestmarketing.com</a>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Legal Address</div>
+      <span>Tempest Marketing</span><span>DBA of Tempest Dispatch LLC</span>
+      <span>30 N Gould St</span><span>Sheridan, WY 82801</span><span>United States</span>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p><strong>Tempest Dispatch LLC</strong> — Incorporated in the State of Wyoming, United States. "Tempest Marketing" is a registered trade name (DBA) of Tempest Dispatch LLC. © 2025 Tempest Dispatch LLC. All rights reserved.</p>
+    <p>AI Appointment Automation Infrastructure · Not affiliated with any advertising platform · Payments processed securely via credit/debit card, bank transfer, and wire transfer in compliance with applicable U.S. financial regulations.</p>
+  </div>
+</footer>
+<script src="../app.js"></script>
+</body>
+</html>
+
+(function(){
+  'use strict';
+
+  /* ── NAV SCROLL ── */
+  var nav = document.getElementById('nav');
+  if(nav){
+    window.addEventListener('scroll', function(){
+      nav.classList.toggle('scrolled', window.scrollY > 60);
+    }, {passive:true});
+  }
+
+  /* ── MOBILE HAMBURGER ── */
+  var hb  = document.getElementById('hb');
+  var nl  = document.getElementById('nl');
+  var body = document.body;
+
+  if(hb && nl){
+
+    function isDesktop(){
+      return window.innerWidth >= 768;
+    }
+
+    function closeMenu(){
+      nl.classList.remove('open');
+      hb.setAttribute('aria-expanded','false');
+      hb.classList.remove('is-open');
+      body.style.overflow = '';
+      body.style.position = '';
+    }
+
+    function openMenu(){
+      nl.classList.add('open');
+      hb.setAttribute('aria-expanded','true');
+      hb.classList.add('is-open');
+      // Lock body scroll on mobile
+      body.style.overflow = 'hidden';
+    }
+
+    function toggleMenu(){
+      if(nl.classList.contains('open')){ closeMenu(); }
+      else { openMenu(); }
+    }
+
+    // Animate hamburger spans via CSS class
+    hb.addEventListener('click', function(e){
+      e.stopPropagation();
+      toggleMenu();
+    });
+
+    // Close when a nav link is tapped
+    nl.querySelectorAll('a').forEach(function(a){
+      a.addEventListener('click', function(){
+        closeMenu();
+      });
+    });
+
+    // Close when tapping outside the menu
+    document.addEventListener('click', function(e){
+      if(nl.classList.contains('open') &&
+         !nl.contains(e.target) &&
+         !hb.contains(e.target)){
+        closeMenu();
+      }
+    });
+
+    // Close on resize to desktop
+    window.addEventListener('resize', function(){
+      if(isDesktop()){ closeMenu(); }
+    }, {passive:true});
+
+    // Escape key closes menu
+    document.addEventListener('keydown', function(e){
+      if(e.key === 'Escape' && nl.classList.contains('open')){
+        closeMenu();
+        hb.focus();
+      }
+    });
+  }
+
+  /* ── SCROLL REVEAL ── */
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){
+          e.target.classList.add('in');
+          io.unobserve(e.target);
+        }
+      });
+    },{threshold:0.06, rootMargin:'0px 0px -20px 0px'});
+    document.querySelectorAll('.sr').forEach(function(el){ io.observe(el); });
+  } else {
+    document.querySelectorAll('.sr').forEach(function(el){ el.classList.add('in'); });
+  }
+
+  /* ── FAQ ACCORDION ── */
+  document.querySelectorAll('.faq-q').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var item = btn.closest('.faq-item');
+      var isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(function(i){
+        i.classList.remove('open');
+      });
+      if(!isOpen){ item.classList.add('open'); }
+    });
+  });
+
+  /* ── SMOOTH ANCHOR SCROLL ── */
+  document.querySelectorAll('a[href^="#"]').forEach(function(a){
+    a.addEventListener('click', function(e){
+      var id = a.getAttribute('href');
+      var target = document.querySelector(id);
+      if(target){
+        e.preventDefault();
+        var navH = parseInt(
+          getComputedStyle(document.documentElement)
+            .getPropertyValue('--nav-h')
+        ) || 60;
+        var y = target.getBoundingClientRect().top + window.scrollY - navH - 12;
+        window.scrollTo({top:y, behavior:'smooth'});
+      }
+    });
+  });
+
+})();
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="theme-color" content="#080C16">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Book a Strategy Call — Tempest Marketing</title>
+<meta name="description" content="Book a free 30-minute strategy call with Tempest Marketing. No commitment. We map out exactly how the AI appointment system works for your specific business.">
+<link rel="stylesheet" href="../style.css">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<link rel="shortcut icon" href="../favicon.svg">
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <a href="../index.html" class="nav-logo">TEMPEST<span>MARKETING</span></a>
+  <div class="nav-links" id="nl">
+    <a href="../index.html">Home</a>
+    <a href="../infrastructure/index.html">How It Works</a>
+    <a href="../about/index.html">About</a>
+    <a href="../pricing/index.html">Pricing</a>
+    <a href="../contact/index.html" class="nav-btn active">Book a Call</a>
+  </div>
+  <button class="hamburger" id="hb" aria-label="Menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<section class="page-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="../index.html">Home</a><span class="breadcrumb-sep">/</span><span>Book a Strategy Call</span></div>
+    <div class="eyebrow">Get in Touch</div>
+    <h1 class="page-h1">Stop Processing Leads.<br><span class="e">Start Closing Them.</span></h1>
+    <p class="page-sub">Book a 30-minute strategy session. This is not a sales pitch — it is a focused audit of your current pipeline to identify exactly where qualified prospects are falling through the cracks, and how our system closes that gap permanently.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="contact-layout">
+
+      <!-- LEFT: INFO -->
+      <div class="contact-aside">
+
+        <div class="c-block sr">
+          <div class="eyebrow">What Happens on the Call</div>
+          <div class="c-block-title">A 30-minute pipeline audit — not a pitch</div>
+          <p>We walk through your current lead generation process, calculate your speed-to-lead attrition rate, and run a live demonstration of our AI qualification system. You leave the call with a clear picture of what the infrastructure looks like for your specific business — and a concrete answer on whether we are the right fit.</p>
+          <div class="demo-meta">
+            <div class="demo-meta-item"><div class="dmi-label">Duration</div><div class="dmi-val">30 Minutes</div></div>
+            <div class="demo-meta-item"><div class="dmi-label">Commitment</div><div class="dmi-val">Zero Obligation</div></div>
+          </div>
+        </div>
+
+        <div class="c-block sr sr-d1">
+          <div class="eyebrow">Direct Contact</div>
+          <div class="c-block-title">Reach us directly</div>
+          <div class="direct-contacts">
+            <a href="tel:+13074004521" class="direct-contact-item">
+              <div class="dc-icon">📞</div>
+              <div><div class="dc-label">Phone</div><div class="dc-val">+1 (307) 400-4521</div></div>
+            </a>
+            <a href="mailto:info@tempestmarketing.com" class="direct-contact-item">
+              <div class="dc-icon">✉️</div>
+              <div><div class="dc-label">General Inquiries</div><div class="dc-val">info@tempestmarketing.com</div></div>
+            </a>
+            <a href="mailto:sales@tempestmarketing.com" class="direct-contact-item">
+              <div class="dc-icon">💼</div>
+              <div><div class="dc-label">Sales &amp; Partnerships</div><div class="dc-val">sales@tempestmarketing.com</div></div>
+            </a>
+          </div>
+          <p style="margin-top:16px;font-size:13px;color:var(--silver2)">We respond to all inquiries within one business day. For time-sensitive matters, calling directly is the fastest route.</p>
+        </div>
+
+        <div class="c-block sr sr-d2">
+          <div class="eyebrow">Who This Is For</div>
+          <div class="c-block-title">We work best with:</div>
+          <ul class="contact-list">
+            <li>Real estate agents, brokerages &amp; investment teams seeking consistent qualified leads</li>
+            <li>Marketing &amp; creative agencies selling monthly retainers of $2,500+</li>
+            <li>B2B consultants, SaaS companies &amp; fractional executive service providers</li>
+            <li>Any high-ticket business spending $2,000+ per month on lead acquisition</li>
+          </ul>
+        </div>
+
+        <div class="c-mini-faqs sr sr-d3">
+          <div>
+            <div class="cmf-q">Is this a retainer or a one-time engagement?</div>
+            <div class="cmf-a">One-time setup fee. You own the system after deployment — no ongoing technology retainers from us. Choose between our $2,500 Setup Package or $5,000 Growth Package.</div>
+          </div>
+          <div>
+            <div class="cmf-q">How quickly can the system go live?</div>
+            <div class="cmf-a">Typically 2–3 weeks from onboarding. We manage the entire technical buildout. Your time commitment is minimal.</div>
+          </div>
+          <div>
+            <div class="cmf-q">What if you do not deliver 20 appointments in 60 days?</div>
+            <div class="cmf-a">You receive a full refund of your setup investment. No partial credits, no negotiations. The guarantee is contractual.</div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- RIGHT: FORM -->
+      <div class="sr sr-d1">
+        <div class="form-card">
+          <div class="form-head">
+            <h2>Book Your Strategy Call</h2>
+            <p>Fill out the form and we will be in touch within one business day to schedule your 30-minute session at a time that works for you.</p>
+          </div>
+          <form name="strategy-call-request" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/contact/thank-you/" class="demo-form">
+            <input type="hidden" name="form-name" value="strategy-call-request">
+            <p style="display:none"><label>Do not fill this out: <input name="bot-field"></label></p>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="first_name">First Name *</label>
+                <input type="text" id="first_name" name="first_name" placeholder="John" required>
+              </div>
+              <div class="form-group">
+                <label for="last_name">Last Name *</label>
+                <input type="text" id="last_name" name="last_name" placeholder="Smith" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="email">Business Email *</label>
+              <input type="email" id="email" name="email" placeholder="john@yourcompany.com" required>
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone Number *</label>
+              <input type="tel" id="phone" name="phone" placeholder="+1 (555) 000-0000" required>
+            </div>
+            <div class="form-group">
+              <label for="business_type">Business Type *</label>
+              <select id="business_type" name="business_type" required>
+                <option value="" disabled selected>Select your business type</option>
+                <option value="real-estate-agent">Real Estate Agent / Broker</option>
+                <option value="real-estate-brokerage">Real Estate Brokerage / Team</option>
+                <option value="marketing-agency">Marketing / Creative Agency</option>
+                <option value="b2b-consulting">B2B Consulting / Professional Services</option>
+                <option value="saas">SaaS / Technology</option>
+                <option value="other">Other High-Ticket Business</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="package_interest">Package Interest</label>
+              <select id="package_interest" name="package_interest">
+                <option value="" disabled selected>Which package interests you?</option>
+                <option value="setup-2500">Setup Package — $2,500</option>
+                <option value="growth-5000">Advanced / Growth Package — $5,000</option>
+                <option value="unsure">Not sure yet — want to discuss</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="monthly_adspend">Current Monthly Ad Spend</label>
+              <select id="monthly_adspend" name="monthly_adspend">
+                <option value="" disabled selected>Select your current ad spend (optional)</option>
+                <option value="none">Not currently running ads</option>
+                <option value="under-1k">Under $1,000/mo</option>
+                <option value="1k-3k">$1,000 – $3,000/mo</option>
+                <option value="3k-5k">$3,000 – $5,000/mo</option>
+                <option value="5k-plus">$5,000+/mo</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">What is your biggest pipeline challenge right now? (optional)</label>
+              <textarea id="message" name="message" rows="4" placeholder="Tell us what is not working in your current lead follow-up process..."></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-lg btn-full form-submit">Book My Strategy Call →</button>
+            <p class="form-disclaimer">No commitment required. We respond within one business day. Your information is kept strictly confidential and is never shared with third parties.</p>
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="footer-logo">TEMPEST<span>MARKETING</span></div>
+      <p class="footer-tagline">AI-powered appointment infrastructure for real estate professionals, marketing agencies, and B2B service firms. 20 qualified appointments in 60 days — guaranteed.</p>
+      <p class="footer-credline">Serving clients across the United States.</p>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Navigation</div>
+      <a href="../index.html">Home</a><a href="../infrastructure/index.html">How It Works</a><a href="../about/index.html">About Us</a><a href="../pricing/index.html">Pricing &amp; Guarantee</a><a href="../contact/index.html">Book a Call</a>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Contact</div>
+      <a href="tel:+13074004521">+1 (307) 400-4521</a>
+      <a href="mailto:info@tempestmarketing.com">info@tempestmarketing.com</a>
+      <a href="mailto:sales@tempestmarketing.com">sales@tempestmarketing.com</a>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Legal Address</div>
+      <span>Tempest Marketing</span><span>DBA of Tempest Dispatch LLC</span>
+      <span>30 N Gould St</span><span>Sheridan, WY 82801</span><span>United States</span>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p><strong>Tempest Dispatch LLC</strong> — Incorporated in the State of Wyoming, United States. "Tempest Marketing" is a registered trade name (DBA) of Tempest Dispatch LLC. © 2025 Tempest Dispatch LLC. All rights reserved.</p>
+    <p>AI Appointment Automation Infrastructure · Not affiliated with any advertising platform · Payments processed securely via credit/debit card, bank transfer, and wire transfer in compliance with applicable U.S. financial regulations.</p>
+  </div>
+</footer>
+<script src="../app.js"></script>
+</body>
+</html>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" shape-rendering="crispEdges">
+  <rect width="32" height="32" rx="6" fill="#080C16"/>
+  <polygon
+    points="9,4 23,4 23,10 18,10 16,18 21,18 10,28 13,18 8,18"
+    fill="#00D4FF"/>
+</svg>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="theme-color" content="#080C16">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Tempest Marketing — 20 Qualified Appointments. 60 Days. Guaranteed.</title>
+<meta name="description" content="Tempest Marketing delivers AI-powered appointment infrastructure for B2B services, agencies, and realtors. 20 qualified appointments in 60 days — or a full refund. Serving clients across the U.S.">
+<meta property="og:title" content="Tempest Marketing — 20 Qualified Appointments. 60 Days. Guaranteed.">
+<meta property="og:description" content="AI-powered growth infrastructure for high-ticket businesses. 20 appointments in 60 days or full refund.">
+<meta property="og:type" content="website">
+<link rel="stylesheet" href="style.css">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="shortcut icon" href="favicon.svg">
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <a href="index.html" class="nav-logo">TEMPEST<span>MARKETING</span></a>
+  <div class="nav-links" id="nl">
+    <a href="index.html" class="active">Home</a>
+    <a href="infrastructure/index.html">How It Works</a>
+    <a href="about/index.html">About</a>
+    <a href="pricing/index.html">Pricing</a>
+    <a href="contact/index.html" class="nav-btn">Book a Call</a>
+  </div>
+  <button class="hamburger" id="hb" aria-label="Menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<section class="hero">
+  <div class="hero-badge"><span class="hero-badge-dot"></span>Now Enrolling — Limited Client Capacity</div>
+  <h1 class="hero-h1">20 Qualified<br>Appointments.<br><span class="e">60 Days.</span><br>Guaranteed.</h1>
+  <p class="hero-sub">Tempest Marketing builds AI-powered appointment infrastructure that engages every inbound lead within <strong>3–5 minutes</strong> — qualifying, screening, and booking them onto your calendar before your competitor even reads the notification.</p>
+  <div class="hero-btns">
+    <a href="contact/index.html" class="btn btn-primary btn-lg">Book a Strategy Call</a>
+    <a href="infrastructure/index.html" class="btn btn-outline btn-lg">See How It Works →</a>
+  </div>
+  <div class="hero-trust">
+    <div class="trust-item"><strong>20-Appointment Guarantee</strong><span>Full refund if we miss the mark</span></div>
+    <div class="trust-item"><strong>3–5 Min Response Window</strong><span>AI engages before competitors</span></div>
+    <div class="trust-item"><strong>Live in 2–3 Weeks</strong><span>Fully done-for-you deployment</span></div>
+    <div class="trust-item"><strong>Wyoming LLC — U.S. Registered</strong><span>Serving clients across the U.S.</span></div>
+  </div>
+</section>
+
+<div class="stats-bar">
+  <div class="stat-cell sr">
+    <div class="stat-n">78%</div>
+    <div class="stat-meta"><strong>First-responder win rate</strong><p>Of all deals are won by the business that responds first. Speed is no longer a differentiator — it is the baseline requirement.</p></div>
+  </div>
+  <div class="stat-cell sr sr-d1">
+    <div class="stat-n">47h</div>
+    <div class="stat-meta"><strong>Average business response time</strong><p>The typical follow-up window before a business contacts an inbound lead. Your prospects go cold long before that.</p></div>
+  </div>
+  <div class="stat-cell sr sr-d2">
+    <div class="stat-n">&lt;5m</div>
+    <div class="stat-meta"><strong>Our AI response window</strong><p>Every form submission triggers an automated, intelligent response. Around the clock. No gaps. No missed leads.</p></div>
+  </div>
+  <div class="stat-cell sr sr-d3">
+    <div class="stat-n">10×</div>
+    <div class="stat-meta"><strong>Contact rate improvement</strong><p>The measurable lift in contact rate when following up within 5 minutes versus 5+ hours. The difference is not marginal.</p></div>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container">
+    <div class="section-header sr">
+      <div class="eyebrow">The Real Problem</div>
+      <h2 class="h2">You Don't Have a Lead Problem.<br>You Have a <span class="e">Follow-Up Problem.</span></h2>
+      <p class="lead">Every minute an inbound lead sits unanswered, your probability of contact drops by 80%. The gap between your ad spend and your closed deals is not your offer — it is the infrastructure between them.</p>
+    </div>
+    <div class="pain-grid">
+      <div class="pain-card sr">
+        <div class="pain-card-title">The average business takes over 47 hours to respond to a new inbound lead</div>
+        <p class="pain-card-body">The first business to respond wins 78% of the deal. By the time your team follows up, the prospect has already moved on — or been closed by a competitor who moved faster.</p>
+      </div>
+      <div class="pain-card sr sr-d1">
+        <div class="pain-card-title">You are spending $2,000–$5,000 per month on ads and losing leads in the first five minutes</div>
+        <p class="pain-card-body">This is not a targeting problem. This is not a creative problem. This is a speed-to-lead infrastructure problem — and it has a direct, measurable fix.</p>
+      </div>
+      <div class="pain-card sr sr-d2">
+        <div class="pain-card-title">Unqualified conversations consume hours of your team's productive time every week</div>
+        <p class="pain-card-body">Your closers are pitching prospects who were never a real fit. Every hour spent on the wrong conversation is an hour your team is not closing the right one.</p>
+      </div>
+      <div class="pain-card sr sr-d3">
+        <div class="pain-card-title">Your pipeline is inconsistent — empty some weeks, wrong conversations the next</div>
+        <p class="pain-card-body">Pipeline inconsistency is a systems problem, not a sales problem. The right infrastructure creates a predictable, repeatable flow of qualified meetings — every week, without exception.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-header sr">
+      <div class="eyebrow">The System</div>
+      <h2 class="h2">Five Steps from First Click to<br><span class="e">Closed Calendar.</span></h2>
+      <p class="lead">A fully automated appointment pipeline — acquisition, outreach, qualification, booking, and handoff — so your team only engages with pre-screened prospects who are ready to move.</p>
+    </div>
+    <div class="steps-row">
+      <div class="step sr"><div class="step-num">01</div><div class="step-tag">Paid Traffic</div><div class="step-title">Targeted Acquisition</div><p class="step-body">AI-optimized campaigns drive motivated, intent-qualified prospects directly into your pipeline.</p></div>
+      <div class="step sr sr-d1"><div class="step-num">02</div><div class="step-tag">Speed-to-Lead</div><div class="step-title">Instant AI Engagement</div><p class="step-body">Within 3–5 minutes of every form submission, our AI initiates contact — 24 hours a day, 7 days a week.</p></div>
+      <div class="step sr sr-d2"><div class="step-num">03</div><div class="step-tag">Pre-Screening</div><div class="step-title">Dynamic Qualification</div><p class="step-body">Budget, timeline, motivation, and fit — assessed conversationally before your team is ever involved.</p></div>
+      <div class="step sr sr-d3"><div class="step-num">04</div><div class="step-tag">Calendar Sync</div><div class="step-title">Automatic Booking</div><p class="step-body">Qualified prospects land directly in your calendar with full context notes. Zero friction. Zero phone tag.</p></div>
+      <div class="step sr sr-d4"><div class="step-num">05</div><div class="step-tag">You Close</div><div class="step-title">Human Handoff</div><p class="step-body">Walk into every meeting fully briefed. Close the deal. That is your only role in this system.</p></div>
+    </div>
+    <div style="margin-top:36px"><a href="infrastructure/index.html" class="btn btn-outline btn-md sr">Full Technical Breakdown →</a></div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-header sr">
+      <div class="eyebrow">What You Get</div>
+      <h2 class="h2">A Calendar Full of Qualified,<br><span class="e">Ready-to-Close</span> Conversations.</h2>
+      <p class="lead">No chasing. No cold calling. No tire-kickers. Every meeting that reaches your calendar has been pre-screened on budget, timeline, motivation, and fit.</p>
+    </div>
+    <div class="benefits-grid">
+      <div class="benefit wide sr"><div class="benefit-label">Core Advantage</div><h3 class="benefit-title">Instant Speed-to-Lead — Every Single Time</h3><p class="benefit-body">Our AI responds to every inbound lead within 3–5 minutes, 24 hours a day, 365 days a year. The window where a lead is most receptive — immediately after submitting a form — is exactly when our system reaches them. No delays. No gaps. No revenue left on the table from slow follow-up.</p></div>
+      <div class="benefit sr"><div class="benefit-label">Ad ROI</div><h3 class="benefit-title">Maximum Return on Every Ad Dollar</h3><p class="benefit-body">Every dollar invested in paid traffic reaches its full potential. No lead is abandoned at the critical follow-up window. Same budget. Measurably more qualified conversations — every month.</p><div class="benefit-stat">10×<small>Contact rate vs. 5-hour response</small></div></div>
+      <div class="benefit sr sr-d1"><div class="benefit-label">Calendar Quality</div><h3 class="benefit-title">Pre-Qualified Meetings Only</h3><p class="benefit-body">Every appointment has been screened on budget, motivation, timeline, and fit before it lands on your calendar. Your team walks in to close — not to discover whether the prospect can even afford you.</p></div>
+      <div class="benefit sr sr-d2"><div class="benefit-label">Asset Ownership</div><h3 class="benefit-title">You Own the Infrastructure</h3><p class="benefit-body">Post-deployment, the complete AI system transfers to your business. No ongoing retainer for the technology. No dependency on Tempest Marketing. A permanent, revenue-generating asset you control entirely.</p></div>
+      <div class="benefit sr sr-d3"><div class="benefit-label">Deployment Speed</div><h3 class="benefit-title">Fully Live in 2–3 Weeks</h3><p class="benefit-body">Our team manages the complete technical buildout — CRM integration, AI scripting, calendar sync, and go-live testing. Minimal time commitment required from your side throughout the process.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-header sr">
+      <div class="eyebrow">Who We Serve</div>
+      <h2 class="h2">Built for Businesses Where<br>One Meeting = <span class="e">Real Revenue.</span></h2>
+      <p class="lead">Tempest Marketing works exclusively with high-ticket businesses where a single qualified appointment translates directly to closed deals and meaningful revenue growth.</p>
+    </div>
+    <div class="ica-grid">
+      <div class="ica sr"><div class="eyebrow" style="margin-bottom:0">Vertical 01</div><div class="ica-title">Real Estate Professionals</div><p class="ica-body">From independent agents to full-service brokerages, we build systems that fill your calendar with pre-qualified buyers and sellers who are motivated, financially ready, and actively looking to move. Stop chasing portal leads. Start closing at a higher rate with better prospects.</p><ul class="ica-tags"><li>Buyer Agents</li><li>Listing Agents</li><li>Brokerages</li><li>Investors</li></ul><a href="contact/index.html" class="btn btn-outline btn-sm" style="margin-top:4px">Get started →</a></div>
+      <div class="ica sr sr-d1"><div class="eyebrow" style="margin-bottom:0">Vertical 02</div><div class="ica-title">Marketing &amp; Creative Agencies</div><p class="ica-body">Agencies selling monthly retainers need a predictable new business engine — not a referral-dependent pipeline. We build the outbound and inbound infrastructure so your leadership stays focused on delivery and retention, not prospecting.</p><ul class="ica-tags"><li>Marketing</li><li>Creative</li><li>Performance</li><li>Web &amp; SEO</li></ul><a href="contact/index.html" class="btn btn-outline btn-sm" style="margin-top:4px">Get started →</a></div>
+      <div class="ica sr sr-d2"><div class="eyebrow" style="margin-bottom:0">Vertical 03</div><div class="ica-title">B2B Consultants &amp; Service Firms</div><p class="ica-body">High-ticket service providers who close on strategy calls need pre-qualified decision-makers — not gatekeepers. We book prospects who have the budget, the problem, and the readiness to make a decision now.</p><ul class="ica-tags"><li>Consultants</li><li>SaaS</li><li>Fractional Execs</li><li>Professional Services</li></ul><a href="contact/index.html" class="btn btn-outline btn-sm" style="margin-top:4px">Get started →</a></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="about-preview sr">
+      <div class="about-preview-text">
+        <div class="eyebrow">About Tempest Marketing</div>
+        <h2 class="h2">We Build Systems.<br>You <span class="e">Close Deals.</span></h2>
+        <p class="lead">Tempest Marketing is a U.S.-based growth infrastructure company specializing in AI-powered appointment systems for high-ticket businesses. We do not sell leads. We build the end-to-end pipeline that converts your existing traffic into qualified, booked meetings — and we guarantee the result.</p>
+        <p style="color:var(--silver);font-size:15px;line-height:1.75;margin-top:16px;font-weight:300">Our team has built and refined one system across real estate, agency, and B2B consulting verticals. It outperforms every manual process we have encountered. That system is available to your business — backed by a result-or-refund commitment that means we carry all of the risk.</p>
+        <a href="about/index.html" class="btn btn-outline btn-md" style="margin-top:28px">Our Full Story →</a>
+      </div>
+      <div class="about-preview-stats">
+        <div class="astat"><div class="astat-n">$5M+</div><div class="astat-l">In pipeline generated for clients</div></div>
+        <div class="astat"><div class="astat-n">3</div><div class="astat-l">High-ticket verticals with proven results</div></div>
+        <div class="astat"><div class="astat-n">100%</div><div class="astat-l">Guarantee-backed deployments</div></div>
+        <div class="astat"><div class="astat-n">2–3 wk</div><div class="astat-l">Average time from onboarding to live</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-header sr" style="text-align:center;max-width:100%">
+      <div class="eyebrow">The Guarantee</div>
+      <h2 class="h2">20 Qualified Appointments in 60 Days.<br>Or We Refund <span class="e">Every Dollar.</span></h2>
+    </div>
+    <div class="guarantee-wrap sr">
+      <div class="guar-num">20</div>
+      <div class="guar-label">Qualified Appointments</div>
+      <div class="guar-sub">IN 60 DAYS — OR EVERY DOLLAR BACK</div>
+      <p class="guar-body">We are confident enough in our infrastructure to back every deployment with a complete, no-conditions refund guarantee. If your system does not deliver 20 pre-qualified, booked appointments within 60 days of go-live, you receive a full refund of your setup investment. No partial credits. No negotiations. No exceptions.</p>
+      <div class="guar-btns">
+        <a href="pricing/index.html" class="btn btn-outline btn-lg">View Pricing &amp; Guarantee →</a>
+        <a href="contact/index.html" class="btn btn-primary btn-lg">Book a Strategy Call</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="cta-block sr">
+      <div class="eyebrow">Ready to Build Your Pipeline?</div>
+      <h2 class="h2">Book a Free 30-Minute<br><span class="e">Strategy Call</span></h2>
+      <p class="lead" style="margin:0 auto 36px">No pitch. No pressure. We map out exactly how the system integrates with your business — and show you what 20 qualified appointments in 60 days looks like for your specific market and offer.</p>
+      <div class="cta-btns">
+        <a href="contact/index.html" class="btn btn-primary btn-lg">Book a Strategy Call</a>
+        <a href="pricing/index.html" class="btn btn-outline btn-lg">View Pricing →</a>
+      </div>
+      <div class="cta-dots">
+        <span>No commitment required</span><span class="cta-dot-sep">·</span>
+        <span>30-minute session</span><span class="cta-dot-sep">·</span>
+        <span>Tailored system walkthrough</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="footer-logo">TEMPEST<span>MARKETING</span></div>
+      <p class="footer-tagline">AI-powered appointment infrastructure for real estate professionals, marketing agencies, and B2B service firms. 20 qualified appointments in 60 days — guaranteed.</p>
+      <p class="footer-credline">Serving clients across the United States.</p>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Navigation</div>
+      <a href="index.html">Home</a>
+      <a href="infrastructure/index.html">How It Works</a>
+      <a href="about/index.html">About Us</a>
+      <a href="pricing/index.html">Pricing &amp; Guarantee</a>
+      <a href="contact/index.html">Book a Call</a>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Contact</div>
+      <a href="tel:+13074004521">+1 (307) 400-4521</a>
+      <a href="mailto:info@tempestmarketing.com">info@tempestmarketing.com</a>
+      <a href="mailto:sales@tempestmarketing.com">sales@tempestmarketing.com</a>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Legal Address</div>
+      <span>Tempest Marketing</span>
+      <span>DBA of Tempest Dispatch LLC</span>
+      <span>30 N Gould St</span>
+      <span>Sheridan, WY 82801</span>
+      <span>United States</span>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p><strong>Tempest Dispatch LLC</strong> — Incorporated in the State of Wyoming, United States. "Tempest Marketing" is a registered trade name (DBA) of Tempest Dispatch LLC. © 2025 Tempest Dispatch LLC. All rights reserved.</p>
+    <p>AI Appointment Automation Infrastructure · Not affiliated with any advertising platform · Payments processed securely via credit/debit card, bank transfer, and wire transfer in compliance with applicable U.S. financial regulations.</p>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="theme-color" content="#080C16">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>How It Works — The 5-Step AI Appointment Engine | Tempest Marketing</title>
+<meta name="description" content="The complete technical breakdown of how Tempest Marketing delivers 20 qualified appointments in 60 days. From raw traffic to a booked meeting — fully automated.">
+<link rel="stylesheet" href="../style.css">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<link rel="shortcut icon" href="../favicon.svg">
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <a href="../index.html" class="nav-logo">TEMPEST<span>MARKETING</span></a>
+  <div class="nav-links" id="nl">
+    <a href="../index.html">Home</a>
+    <a href="../infrastructure/index.html" class="active">How It Works</a>
+    <a href="../about/index.html">About</a>
+    <a href="../pricing/index.html">Pricing</a>
+    <a href="../contact/index.html" class="nav-btn">Book a Call</a>
+  </div>
+  <button class="hamburger" id="hb" aria-label="Menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<section class="page-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="../index.html">Home</a><span class="breadcrumb-sep">/</span><span>How It Works</span></div>
+    <div class="eyebrow">The Infrastructure</div>
+    <h1 class="page-h1">The 5-Step AI<br><span class="e">Appointment Engine.</span></h1>
+    <p class="page-sub">From raw inbound traffic to a qualified, booked meeting — fully automated. Here is exactly how Tempest Marketing's infrastructure integrates into your business and eliminates speed-to-lead drop-off permanently.</p>
+    <div class="page-stats">
+      <div class="page-stat"><span>3–5 min</span><p>AI response window</p></div>
+      <div class="page-stat"><span>Fully</span><p>Automated pipeline</p></div>
+      <div class="page-stat"><span>1,000+</span><p>CRM integrations</p></div>
+      <div class="page-stat"><span>24/7/365</span><p>Operational uptime</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-header sr">
+      <div class="eyebrow">The Process</div>
+      <h2 class="h2">End-to-End. <span class="e">Zero Gaps.</span></h2>
+      <p class="lead">Every stage of the pipeline is engineered for speed, precision, and complete accountability — from the moment a prospect submits a form to the moment they appear on your calendar.</p>
+    </div>
+    <div class="infra-list">
+
+      <div class="infra-item sr">
+        <div class="infra-num"><span>01</span></div>
+        <div class="infra-body">
+          <div class="infra-tag">Paid Traffic</div>
+          <h3 class="infra-title">Targeted Inbound Traffic</h3>
+          <p>Whether you are running Meta Ads, Google PPC, or working with purchased lead lists, your traffic flows into your landing pages or CRM. The moment a prospect submits a contact form, the Tempest Marketing system is triggered automatically — with zero manual intervention required.</p>
+          <div class="infra-checks">
+            <span class="check-item"><span class="check-mark">✓</span> Meta Ads &amp; Google PPC</span>
+            <span class="check-item"><span class="check-mark">✓</span> Landing page form capture</span>
+            <span class="check-item"><span class="check-mark">✓</span> CRM webhook triggers</span>
+            <span class="check-item"><span class="check-mark">✓</span> Third-party lead list import</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="infra-item sr sr-d1">
+        <div class="infra-num"><span>02</span></div>
+        <div class="infra-body">
+          <div class="infra-tag">Speed-to-Lead</div>
+          <h3 class="infra-title">Instant AI Outreach</h3>
+          <p>Within 3 to 5 minutes of a form submission, our AI initiates direct contact with the prospect. It does not sleep, take breaks, or observe weekends. By engaging the prospect at peak buying intent — immediately after they have raised their hand — we capture attention before any competitor has the chance to respond.</p>
+          <div class="infra-checks">
+            <span class="check-item"><span class="check-mark">✓</span> Under 5-minute response</span>
+            <span class="check-item"><span class="check-mark">✓</span> AI voice + SMS + email</span>
+            <span class="check-item"><span class="check-mark">✓</span> 24/7 — no exceptions</span>
+            <span class="check-item"><span class="check-mark">✓</span> Peak buying-intent engagement</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="infra-item sr sr-d2">
+        <div class="infra-num"><span>03</span></div>
+        <div class="infra-body">
+          <div class="infra-tag">Pre-Screening</div>
+          <h3 class="infra-title">Dynamic AI Qualification</h3>
+          <p>The AI conducts a natural, conversational qualification dialogue. It verifies the exact criteria you define during onboarding — budget range, timeline, motivation level, and specific fit requirements. Prospects who do not meet your minimum criteria are politely disqualified before they ever touch your calendar.</p>
+          <div class="infra-checks">
+            <span class="check-item"><span class="check-mark">✓</span> Budget verification</span>
+            <span class="check-item"><span class="check-mark">✓</span> Timeline confirmation</span>
+            <span class="check-item"><span class="check-mark">✓</span> Problem fit validation</span>
+            <span class="check-item"><span class="check-mark">✓</span> Custom disqualification rules</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="infra-item sr sr-d3">
+        <div class="infra-num"><span>04</span></div>
+        <div class="infra-body">
+          <div class="infra-tag">Calendar Sync</div>
+          <h3 class="infra-title">Direct Calendar Booking</h3>
+          <p>Once a prospect passes qualification, the AI books them directly into your available calendar slots — synced in real time with your CRM and calendar platform. Confirmation messages and reminders are sent automatically. No back-and-forth. No phone tag. No leads stalling in a follow-up queue.</p>
+          <div class="infra-checks">
+            <span class="check-item"><span class="check-mark">✓</span> Real-time calendar sync</span>
+            <span class="check-item"><span class="check-mark">✓</span> Automated confirmations &amp; reminders</span>
+            <span class="check-item"><span class="check-mark">✓</span> Full qualification notes attached</span>
+            <span class="check-item"><span class="check-mark">✓</span> Google Calendar &amp; Calendly native</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="infra-item sr sr-d4">
+        <div class="infra-num"><span>05</span></div>
+        <div class="infra-body">
+          <div class="infra-tag">You Close</div>
+          <h3 class="infra-title">The Human Handoff</h3>
+          <p>Your team opens their calendar to see fully briefed, pre-qualified prospects. Every booking includes the full transcript of the AI's qualification conversation, confirmed budget and timeline, and recommended talking points. Your closers walk into every call knowing exactly who they are speaking with — and ready to close, not qualify.</p>
+          <div class="infra-checks">
+            <span class="check-item"><span class="check-mark">✓</span> Full AI conversation transcript</span>
+            <span class="check-item"><span class="check-mark">✓</span> Qualification summary report</span>
+            <span class="check-item"><span class="check-mark">✓</span> Recommended talking points</span>
+            <span class="check-item"><span class="check-mark">✓</span> CRM record auto-populated</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-header sr">
+      <div class="eyebrow">The Technology</div>
+      <h2 class="h2">Enterprise Infrastructure.<br><span class="e">Zero Workflow Disruption.</span></h2>
+      <p class="lead">The system is built to work around your existing operations — not replace them. Native integrations, guaranteed uptime, and rich data at every stage of the pipeline.</p>
+    </div>
+    <div class="tech-grid">
+      <div class="tech-card sr">
+        <div class="tech-icon">⚡</div>
+        <h3 class="tech-title">Native CRM Integration</h3>
+        <p class="tech-body">Our system connects directly to GoHighLevel, Salesforce, HubSpot, Follow Up Boss, and over 1,000 other platforms via Webhooks and API. Your current workflow remains completely undisturbed from day one.</p>
+      </div>
+      <div class="tech-card sr sr-d1">
+        <div class="tech-icon">🕐</div>
+        <h3 class="tech-title">24/7/365 Operational Uptime</h3>
+        <p class="tech-body">After-hours leads are no longer a missed opportunity. The AI processes, qualifies, and books meetings regardless of time zone, day of the week, or public holiday — while your competitors' offices are closed.</p>
+      </div>
+      <div class="tech-card sr sr-d2">
+        <div class="tech-icon">📊</div>
+        <h3 class="tech-title">Data-Rich Context on Every Call</h3>
+        <p class="tech-body">Every appointment booked includes a detailed conversation transcript and qualification data summary. Your closers never walk into a meeting without a complete picture of who they are speaking with and why that person is ready to buy.</p>
+      </div>
+    </div>
+    <div class="integrations sr">
+      <div class="integrations-label">Connects natively with</div>
+      <div class="integrations-badges">
+        <span class="badge">GoHighLevel</span>
+        <span class="badge">HubSpot</span>
+        <span class="badge">Salesforce</span>
+        <span class="badge">Follow Up Boss</span>
+        <span class="badge">Google Calendar</span>
+        <span class="badge">Calendly</span>
+        <span class="badge">Meta Ads</span>
+        <span class="badge">Google Ads</span>
+        <span class="badge">Twilio</span>
+        <span class="badge">+ 1,000 via Webhooks &amp; API</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="cta-block sr">
+      <div class="eyebrow">Ready to Deploy</div>
+      <h2 class="h2">Stop Processing Raw Leads.<br><span class="e">Start Closing Qualified Appointments.</span></h2>
+      <p class="lead" style="margin:0 auto 36px">Book a 30-minute strategy call and we will map the exact integration path for your business — CRM, calendar, ad campaigns, and qualification logic — before any commitment is required.</p>
+      <div class="cta-btns">
+        <a href="../contact/index.html" class="btn btn-primary btn-lg">Book a Strategy Call</a>
+        <a href="../pricing/index.html" class="btn btn-outline btn-lg">View Pricing →</a>
+      </div>
+      <div class="cta-dots">
+        <span>30-minute session</span><span class="cta-dot-sep">·</span><span>No commitment required</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="footer-logo">TEMPEST<span>MARKETING</span></div>
+      <p class="footer-tagline">AI-powered appointment infrastructure for real estate professionals, marketing agencies, and B2B service firms. 20 qualified appointments in 60 days — guaranteed.</p>
+      <p class="footer-credline">Serving clients across the United States.</p>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Navigation</div>
+      <a href="../index.html">Home</a><a href="../infrastructure/index.html">How It Works</a><a href="../about/index.html">About Us</a><a href="../pricing/index.html">Pricing &amp; Guarantee</a><a href="../contact/index.html">Book a Call</a>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Contact</div>
+      <a href="tel:+13074004521">+1 (307) 400-4521</a>
+      <a href="mailto:info@tempestmarketing.com">info@tempestmarketing.com</a>
+      <a href="mailto:sales@tempestmarketing.com">sales@tempestmarketing.com</a>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Legal Address</div>
+      <span>Tempest Marketing</span><span>DBA of Tempest Dispatch LLC</span>
+      <span>30 N Gould St</span><span>Sheridan, WY 82801</span><span>United States</span>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p><strong>Tempest Dispatch LLC</strong> — Incorporated in the State of Wyoming, United States. "Tempest Marketing" is a registered trade name (DBA) of Tempest Dispatch LLC. © 2025 Tempest Dispatch LLC. All rights reserved.</p>
+    <p>AI Appointment Automation Infrastructure · Not affiliated with any advertising platform · Payments processed securely via credit/debit card, bank transfer, and wire transfer in compliance with applicable U.S. financial regulations.</p>
+  </div>
+</footer>
+<script src="../app.js"></script>
+</body>
+</html>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 160" width="680" height="160" shape-rendering="geometricPrecision" text-rendering="geometricPrecision">
+
+  <!-- T-BOLT ICON — pure geometric lightning bolt, pixel-perfect -->
+  <g id="tbolt">
+    <!-- Main bolt body -->
+    <polygon points="18,8 62,8 62,28 46,28 38,64 56,64 20,152 34,72 14,72"
+             fill="#00D4FF"/>
+    <!-- Subtle glow outline (thin, semi-transparent) -->
+    <polygon points="18,8 62,8 62,28 46,28 38,64 56,64 20,152 34,72 14,72"
+             fill="none" stroke="#00D4FF" stroke-width="1.5" stroke-opacity="0.22"/>
+  </g>
+
+  <!-- WORDMARK: TEMPEST -->
+  <text
+    x="84" y="100"
+    font-family="'Bebas Neue', 'Arial Black', Impact, sans-serif"
+    font-size="96"
+    font-weight="400"
+    letter-spacing="6"
+    fill="#EEF4FF"
+    dominant-baseline="auto">TEMPEST</text>
+
+  <!-- WORDMARK: MARKETING (electric, spaced) -->
+  <text
+    x="86" y="136"
+    font-family="'Bebas Neue', 'Arial Black', Impact, sans-serif"
+    font-size="38"
+    font-weight="400"
+    letter-spacing="14"
+    fill="#00D4FF"
+    dominant-baseline="auto">MARKETING</text>
+
+  <!-- Tagline rule line -->
+  <line x1="86" y1="148" x2="640" y2="148" stroke="#00D4FF" stroke-width="1" stroke-opacity="0.3"/>
+
+  <!-- Tagline text -->
+  <text
+    x="86" y="160"
+    font-family="'DM Sans', Arial, sans-serif"
+    font-size="11"
+    font-weight="500"
+    letter-spacing="3.5"
+    fill="#6E8090"
+    dominant-baseline="auto">AI APPOINTMENT ENGINE · TEMPEST DISPATCH LLC</text>
+
+</svg>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="theme-color" content="#080C16">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Pricing & Guarantee — Transparent Pricing. Binary Outcomes. | Tempest Marketing</title>
+<meta name="description" content="Two clear packages starting at $2,500. 20 qualified appointments in 60 days or a full refund. No monthly retainers. You own the entire system.">
+<link rel="stylesheet" href="../style.css">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<link rel="shortcut icon" href="../favicon.svg">
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <a href="../index.html" class="nav-logo">TEMPEST<span>MARKETING</span></a>
+  <div class="nav-links" id="nl">
+    <a href="../index.html">Home</a>
+    <a href="../infrastructure/index.html">How It Works</a>
+    <a href="../about/index.html">About</a>
+    <a href="../pricing/index.html" class="active">Pricing</a>
+    <a href="../contact/index.html" class="nav-btn">Book a Call</a>
+  </div>
+  <button class="hamburger" id="hb" aria-label="Menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<section class="page-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="../index.html">Home</a><span class="breadcrumb-sep">/</span><span>Pricing &amp; Guarantee</span></div>
+    <div class="eyebrow">Pricing &amp; Guarantee</div>
+    <h1 class="page-h1">Transparent Pricing.<br><span class="e">Binary Outcomes.</span></h1>
+    <p class="page-sub">No monthly retainers for raw leads. No ambiguous deliverables. You make a one-time setup investment for infrastructure you own outright — backed by a strict performance guarantee that means we carry all of the risk.</p>
+  </div>
+</section>
+
+<!-- PRICING TIERS -->
+<section class="section">
+  <div class="container">
+    <div class="section-header sr" style="text-align:center;max-width:100%">
+      <div class="eyebrow">Choose Your Package</div>
+      <h2 class="h2">One Investment.<br><span class="e">Guaranteed Results.</span></h2>
+      <p class="lead" style="margin:0 auto">Both packages include the same core AI appointment system and 60-day performance guarantee. The Growth Package adds expanded capacity, multi-channel outreach, and advanced optimization layers.</p>
+    </div>
+
+    <div class="pricing-tiers sr">
+
+      <!-- STARTER -->
+      <div class="tier-card">
+        <div class="tier-head">
+          <div class="tier-badge">Setup Package</div>
+          <div class="tier-price">$2,500</div>
+          <div class="tier-freq">One-Time Setup Investment</div>
+          <p class="tier-desc">The complete AI appointment system for businesses ready to close the speed-to-lead gap and start generating consistent qualified meetings.</p>
+        </div>
+        <div class="tier-body">
+          <ul class="tier-features">
+            <li><span class="feat-check">✓</span> AI Speed-to-Lead Activation (Under 5 minutes)</li>
+            <li><span class="feat-check">✓</span> Custom Qualification Logic &amp; Scripting</li>
+            <li><span class="feat-check">✓</span> CRM &amp; Calendar Integration (GoHighLevel, HubSpot, etc.)</li>
+            <li><span class="feat-check">✓</span> Automated Booking &amp; Confirmation Sequences</li>
+            <li><span class="feat-check">✓</span> Sales Team Briefing &amp; Handoff Protocols</li>
+            <li><span class="feat-check">✓</span> Full System Ownership Post-Setup</li>
+            <li><span class="feat-check">✓</span> 20-Appointment / 60-Day Performance Guarantee</li>
+            <li><span class="feat-check">✓</span> 2–3 Week Done-For-You Deployment</li>
+          </ul>
+          <a href="../contact/index.html" class="btn btn-outline btn-lg btn-full">Get Started →</a>
+        </div>
+      </div>
+
+      <!-- GROWTH - FEATURED -->
+      <div class="tier-card tier-featured">
+        <div class="tier-popular">Most Popular</div>
+        <div class="tier-head">
+          <div class="tier-badge">Advanced / Growth Package</div>
+          <div class="tier-price">$5,000</div>
+          <div class="tier-freq">One-Time Setup Investment</div>
+          <p class="tier-desc">The full-scale growth infrastructure for businesses ready to dominate their market with a multi-channel AI system built for maximum pipeline output.</p>
+        </div>
+        <div class="tier-body">
+          <ul class="tier-features">
+            <li><span class="feat-check">✓</span> Everything in the Setup Package</li>
+            <li><span class="feat-check">✓</span> Multi-Channel AI Outreach (Voice + SMS + Email)</li>
+            <li><span class="feat-check">✓</span> Advanced Qualification Framework &amp; Dynamic Scripting</li>
+            <li><span class="feat-check">✓</span> Full Ad Campaign Architecture &amp; Top-of-Funnel Build</li>
+            <li><span class="feat-check">✓</span> A/B Tested Qualification Sequences</li>
+            <li><span class="feat-check">✓</span> Pipeline Analytics Dashboard &amp; Reporting</li>
+            <li><span class="feat-check">✓</span> 90-Day Post-Launch Optimization Support</li>
+            <li><span class="feat-check">✓</span> Priority Onboarding &amp; Dedicated Build Team</li>
+            <li><span class="feat-check">✓</span> 20-Appointment / 60-Day Performance Guarantee</li>
+          </ul>
+          <a href="../contact/index.html" class="btn btn-primary btn-lg btn-full">Claim Your System →</a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- GUARANTEE CALLOUT -->
+    <div class="guarantee-callout sr">
+      <div class="gc-left">
+        <div class="eyebrow">The Ironclad Guarantee</div>
+        <h3 class="gc-title">20 Appointments. 60 Days.<br>Or Every Dollar Back.</h3>
+        <p class="gc-body">Both packages are backed by the same guarantee: if your Tempest Marketing system does not deliver 20 fully-qualified, booked appointments within 60 days of go-live, we refund your complete setup investment. No partial credits. No conditions. No negotiations. You get the appointments — or you keep your money.</p>
+        <p class="gc-note"><strong>Note on Paid Traffic:</strong> Clients manage their own advertising budgets directly with the platforms (Meta, Google, etc.). Ad spend is not included in the setup fee. Most clients invest $2,000–$5,000/month in paid traffic depending on market size and growth targets.</p>
+      </div>
+      <div class="gc-stats">
+        <div class="gc-stat"><div class="gc-n">20</div><div class="gc-l">Qualified appointments guaranteed</div></div>
+        <div class="gc-stat"><div class="gc-n">60</div><div class="gc-l">Days from go-live</div></div>
+        <div class="gc-stat"><div class="gc-n">100%</div><div class="gc-l">Refund if not delivered</div></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-header sr">
+      <div class="eyebrow">Frequently Asked Questions</div>
+      <h2 class="h2">Clear Answers.<br><span class="e">No Ambiguity.</span></h2>
+      <p class="lead">Every question a serious buyer asks before making a decision — answered directly and completely.</p>
+    </div>
+    <div class="faq-list">
+
+      <div class="faq-item sr">
+        <button class="faq-q">What results should I realistically expect, and how quickly?<span class="faq-icon">+</span></button>
+        <div class="faq-a">You should expect 20 pre-qualified, booked appointments within 60 days of your system going live. That is not an estimate or an average — it is our contractual commitment. The system is typically live within 2–3 weeks of onboarding. From go-live, the 60-day clock starts. Every appointment is pre-screened against your exact qualification criteria: budget, timeline, and fit. You are not receiving leads — you are receiving confirmed calendar meetings with qualified prospects.</div>
+      </div>
+
+      <div class="faq-item sr sr-d1">
+        <button class="faq-q">Who is this system built for — and who is it not right for?<span class="faq-icon">+</span></button>
+        <div class="faq-a">Tempest Marketing works exclusively with high-ticket businesses where a single qualified appointment directly translates to meaningful revenue. Our three core verticals are real estate professionals (agents, brokerages, investors), marketing and creative agencies selling monthly retainers, and B2B consultants or service firms with ticket sizes of $3,000 or more per engagement. This system is not designed for e-commerce, low-ticket consumer products, or businesses without an active or planned inbound lead source. If you are not currently running ads or do not have an inbound channel, we can build that as part of the Advanced Package.</div>
+      </div>
+
+      <div class="faq-item sr sr-d2">
+        <button class="faq-q">How long does setup and deployment take?<span class="faq-icon">+</span></button>
+        <div class="faq-a">From the date you sign and complete onboarding, our team typically requires 2 to 3 weeks to build, test, and deploy the full AI system. This includes CRM integration, qualification scripting, calendar sync, and go-live testing. We manage the entire technical buildout. The time commitment on your end is minimal — primarily a 1-hour onboarding call to define your qualification criteria and review your existing CRM and calendar setup.</div>
+      </div>
+
+      <div class="faq-item sr">
+        <button class="faq-q">What is the difference between the $2,500 and $5,000 package?<span class="faq-icon">+</span></button>
+        <div class="faq-a">The Setup Package ($2,500) includes the complete core AI appointment system: speed-to-lead activation, qualification logic, CRM and calendar integration, and the 60-day guarantee. It is the right choice for businesses with an active inbound lead source who need to close the follow-up gap immediately. The Advanced / Growth Package ($5,000) adds multi-channel outreach (voice, SMS, and email), a full ad campaign build, advanced A/B tested qualification sequences, a pipeline analytics dashboard, and 90 days of post-launch optimization support. It is designed for businesses ready to scale their pipeline comprehensively. Both packages carry the same 20-appointment, 60-day guarantee.</div>
+      </div>
+
+      <div class="faq-item sr sr-d1">
+        <button class="faq-q">Do I own the system after setup, or is there an ongoing retainer?<span class="faq-icon">+</span></button>
+        <div class="faq-a">You own the system completely after deployment. Tempest Marketing does not charge ongoing retainers for the AI infrastructure. Once built, tested, and handed over, it is your business asset — the scripts, the workflows, the integrations. Your only ongoing costs are the underlying platform subscriptions you use (such as your CRM, Twilio for telephony, or your ad platforms), which typically run $50–$150/month depending on volume. Optional performance optimization support is available separately for clients who want ongoing refinement, but it is never required to maintain the system's operation.</div>
+      </div>
+
+      <div class="faq-item sr sr-d2">
+        <button class="faq-q">Do I need an active advertising budget to get results?<span class="faq-icon">+</span></button>
+        <div class="faq-a">To guarantee 20 qualified appointments within 60 days, we recommend an active paid traffic budget of $2,000–$5,000 per month directed at your target market. This ad spend goes directly to the advertising platforms (Meta, Google, etc.) — it is not included in our setup fee. If you are not currently running paid campaigns, the Advanced / Growth Package includes full ad campaign architecture and launch as part of the buildout. For the Setup Package, we can advise on campaign structure during onboarding, though the media spend management is handled by your team.</div>
+      </div>
+
+      <div class="faq-item sr">
+        <button class="faq-q">How are payments processed? What methods do you accept?<span class="faq-icon">+</span></button>
+        <div class="faq-a">We accept payment via credit card, debit card, ACH bank transfer, and wire transfer. All transactions are processed through secure, compliant payment infrastructure in accordance with applicable U.S. financial regulations. Payment is collected at the time of contract signing, prior to the start of your system buildout. No recurring or automatic billing is applied without explicit written consent. A detailed invoice and service agreement is provided for every engagement, clearly specifying the scope, timeline, and guarantee terms.</div>
+      </div>
+
+      <div class="faq-item sr sr-d1">
+        <button class="faq-q">Does this require me to change my existing CRM?<span class="faq-icon">+</span></button>
+        <div class="faq-a">No. Our infrastructure is built to integrate with your existing workflow. We have native integrations with GoHighLevel, HubSpot, Salesforce, Follow Up Boss, and over 1,000 other platforms via Webhooks and open APIs. If your CRM is not on the native list, it can almost certainly be connected via API or Zapier-style automation. We review your current stack during the onboarding call and confirm compatibility before any work begins.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- BOTTOM CTA -->
+<section class="section">
+  <div class="container">
+    <div class="cta-block sr">
+      <div class="eyebrow">Ready to Move Forward?</div>
+      <h2 class="h2">One Investment.<br><span class="e">Guaranteed Pipeline.</span></h2>
+      <p class="lead" style="margin:0 auto 36px">Book a 30-minute strategy call. We will confirm the right package for your business and walk through exactly what the system looks like for your specific market, offer, and current setup.</p>
+      <div class="cta-btns">
+        <a href="../contact/index.html" class="btn btn-primary btn-lg">Book a Strategy Call</a>
+      </div>
+      <div class="cta-dots">
+        <span>No commitment required</span><span class="cta-dot-sep">·</span>
+        <span>30-minute session</span><span class="cta-dot-sep">·</span>
+        <span>Honest fit assessment</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="footer-logo">TEMPEST<span>MARKETING</span></div>
+      <p class="footer-tagline">AI-powered appointment infrastructure for real estate professionals, marketing agencies, and B2B service firms. 20 qualified appointments in 60 days — guaranteed.</p>
+      <p class="footer-credline">Serving clients across the United States.</p>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Navigation</div>
+      <a href="../index.html">Home</a><a href="../infrastructure/index.html">How It Works</a><a href="../about/index.html">About Us</a><a href="../pricing/index.html">Pricing &amp; Guarantee</a><a href="../contact/index.html">Book a Call</a>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Contact</div>
+      <a href="tel:+13074004521">+1 (307) 400-4521</a>
+      <a href="mailto:info@tempestmarketing.com">info@tempestmarketing.com</a>
+      <a href="mailto:sales@tempestmarketing.com">sales@tempestmarketing.com</a>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Legal Address</div>
+      <span>Tempest Marketing</span><span>DBA of Tempest Dispatch LLC</span>
+      <span>30 N Gould St</span><span>Sheridan, WY 82801</span><span>United States</span>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p><strong>Tempest Dispatch LLC</strong> — Incorporated in the State of Wyoming, United States. "Tempest Marketing" is a registered trade name (DBA) of Tempest Dispatch LLC. © 2025 Tempest Dispatch LLC. All rights reserved.</p>
+    <p>AI Appointment Automation Infrastructure · Not affiliated with any advertising platform · Payments processed securely via credit/debit card, bank transfer, and wire transfer in compliance with applicable U.S. financial regulations.</p>
+  </div>
+</footer>
+<script src="../app.js"></script>
+</body>
+</html>
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap');
+
+/* ═══════════════════════════════════════════════════════════
+   TEMPEST MARKETING — MOBILE-FIRST STYLESHEET
+   Breakpoints:
+     xs  : 0–479px      (small phones)
+     sm  : 480–639px    (large phones)
+     md  : 640–767px    (phablets)
+     lg  : 768–1023px   (tablets)
+     xl  : 1024px+      (desktop)
+   ═══════════════════════════════════════════════════════════ */
+
+/* ── DESIGN TOKENS ───────────────────────────────────────── */
+:root {
+  --bg:        #080C16;
+  --bg2:       #0C1120;
+  --bg3:       #111928;
+  --card:      #141E2E;
+  --card2:     #1A2538;
+  --electric:  #00D4FF;
+  --electric2: #00B5DA;
+  --volt:      #7B2FFF;
+  --silver:    #A8B8C8;
+  --silver2:   #6E8090;
+  --white:     #EEF4FF;
+  --alert:     #FF4D6D;
+  --border:    rgba(255,255,255,0.06);
+  --border-e:  rgba(0,212,255,0.18);
+  --nav-h:     60px;
+  --r:         10px;
+  --r-lg:      16px;
+  --px:        20px;
+  --ff-d:      'Bebas Neue', 'Arial Black', sans-serif;
+  --ff-b:      'DM Sans', system-ui, sans-serif;
+}
+@media(min-width:640px){ :root{ --nav-h:64px; --px:28px; } }
+@media(min-width:768px){ :root{ --nav-h:68px; --px:40px; } }
+@media(min-width:1024px){ :root{ --px:5%; } }
+
+/* ── RESET ───────────────────────────────────────────────── */
+*,*::before,*::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; -webkit-text-size-adjust:100%; text-size-adjust:100%; }
+body {
+  background:var(--bg); color:var(--white);
+  font-family:var(--ff-b); font-size:16px; line-height:1.65;
+  -webkit-font-smoothing:antialiased; overflow-x:hidden;
+}
+a { color:var(--electric); text-decoration:none; transition:color .2s; }
+a:hover { color:var(--electric2); }
+img,svg { max-width:100%; display:block; }
+button { cursor:pointer; font-family:var(--ff-b); }
+
+/* ── UTILITY ─────────────────────────────────────────────── */
+.e { color:var(--electric); }
+.container { max-width:1180px; margin:0 auto; padding:0 var(--px); }
+.eyebrow {
+  font-size:10px; font-weight:600; letter-spacing:3px;
+  text-transform:uppercase; color:var(--electric); margin-bottom:12px;
+  display:block;
+}
+@media(min-width:640px){ .eyebrow{ font-size:11px; letter-spacing:3.5px; margin-bottom:14px; } }
+
+.h2 {
+  font-family:var(--ff-d);
+  font-size:clamp(30px,7vw,56px);
+  letter-spacing:2px; line-height:1.0; color:var(--white); margin-bottom:16px;
+}
+.lead {
+  font-size:15px; color:var(--silver); font-weight:300;
+  line-height:1.75; max-width:100%;
+}
+@media(min-width:640px){ .lead{ font-size:16px; } }
+@media(min-width:1024px){ .lead{ font-size:17px; max-width:620px; } }
+
+/* ── NAVIGATION ──────────────────────────────────────────── */
+.nav {
+  position:fixed; top:0; left:0; right:0; z-index:200;
+  height:var(--nav-h);
+  display:flex; align-items:center; justify-content:space-between;
+  padding:0 var(--px);
+  background:rgba(8,12,22,.96);
+  backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px);
+  border-bottom:1px solid var(--border-e);
+  transition:background .3s;
+}
+.nav.scrolled { background:rgba(8,12,22,.99); }
+.nav-logo {
+  font-family:var(--ff-d); color:var(--white); text-decoration:none;
+  font-size:16px; letter-spacing:2px;
+  white-space:nowrap; flex-shrink:0;
+}
+@media(min-width:480px){ .nav-logo{ font-size:18px; letter-spacing:3px; } }
+@media(min-width:768px){ .nav-logo{ font-size:22px; letter-spacing:4px; } }
+.nav-logo span { color:var(--electric); }
+
+/* ── MOBILE NAV MENU (hidden by default) ─────────────────── */
+.nav-links {
+  /* Hidden state — off-screen top, invisible */
+  display:flex;
+  flex-direction:column;
+  position:fixed;
+  top:var(--nav-h);
+  left:0; right:0;
+  height:calc(100vh - var(--nav-h));
+  background:rgba(8,12,22,.99);
+  padding:0;
+  overflow-y:auto;
+  -webkit-overflow-scrolling:touch;
+  border-top:1px solid var(--border-e);
+  z-index:9999;
+  /* Slide + fade transition */
+  opacity:0;
+  pointer-events:none;
+  transform:translateY(-12px);
+  transition:opacity .25s ease, transform .25s ease;
+}
+/* Open state */
+.nav-links.open {
+  opacity:1;
+  pointer-events:all;
+  transform:translateY(0);
+}
+.nav-links a {
+  font-size:16px; font-weight:600; letter-spacing:1.5px;
+  text-transform:uppercase; color:var(--silver);
+  padding:18px 24px; border-bottom:1px solid var(--border);
+  display:block; width:100%;
+  transition:color .2s, background .2s;
+  -webkit-tap-highlight-color:transparent;
+}
+.nav-links a:hover,
+.nav-links a.active { color:var(--white); background:rgba(255,255,255,.04); }
+.nav-links .nav-btn {
+  background:var(--electric); color:#000 !important;
+  font-weight:700; margin:16px 24px 8px;
+  border-radius:6px; text-align:center;
+  border-bottom:none; width:auto;
+  padding:14px 24px;
+}
+.nav-links .nav-btn:hover { background:var(--electric2); }
+
+/* Tablet and desktop — inline horizontal nav */
+@media(min-width:768px){
+  .nav-links {
+    /* Reset all mobile positioning */
+    display:flex !important;
+    opacity:1 !important;
+    pointer-events:all !important;
+    transform:none !important;
+    /* Inline layout */
+    position:static;
+    height:auto;
+    background:transparent;
+    flex-direction:row;
+    align-items:center;
+    gap:28px;
+    padding:0;
+    border:none;
+    overflow:visible;
+    transition:none;
+  }
+  .nav-links a {
+    font-size:11px; letter-spacing:1.5px;
+    padding:0; border:none; width:auto; display:inline;
+  }
+  .nav-links .nav-btn {
+    padding:9px 20px; margin:0; border-radius:5px;
+    text-align:center; width:auto; display:inline-flex;
+  }
+}
+@media(min-width:1024px){
+  .nav-links { gap:36px; }
+  .nav-links a { font-size:11.5px; }
+}
+
+.hamburger {
+  display:flex; flex-direction:column; gap:5px;
+  background:none; border:none; padding:6px;
+  flex-shrink:0; z-index:10000;
+  -webkit-tap-highlight-color:transparent;
+}
+.hamburger span {
+  display:block; width:22px; height:2px;
+  background:var(--silver); border-radius:2px;
+  transition:transform .3s ease, opacity .3s ease;
+  transform-origin:center;
+}
+/* Animated X when open */
+.hamburger.is-open span:nth-child(1){ transform:rotate(45deg) translate(5px,5px); }
+.hamburger.is-open span:nth-child(2){ opacity:0; transform:scaleX(0); }
+.hamburger.is-open span:nth-child(3){ transform:rotate(-45deg) translate(5px,-5px); }
+@media(min-width:768px){ .hamburger{ display:none !important; } }
+
+/* ── BUTTONS ─────────────────────────────────────────────── */
+.btn {
+  display:inline-flex; align-items:center; justify-content:center; gap:8px;
+  font-family:var(--ff-b); font-weight:600;
+  letter-spacing:1px; text-transform:uppercase;
+  border-radius:5px; transition:all .2s;
+  text-decoration:none; border:none;
+  touch-action:manipulation; -webkit-tap-highlight-color:transparent;
+  white-space:nowrap;
+}
+.btn-lg { font-size:13px; padding:14px 28px; }
+.btn-md { font-size:12px; padding:11px 22px; }
+.btn-sm { font-size:11px; padding:9px 18px; }
+@media(min-width:640px){
+  .btn-lg { padding:15px 34px; }
+  .btn-md { padding:11px 26px; }
+}
+.btn-primary { background:var(--electric); color:#000; }
+.btn-primary:hover { background:var(--electric2); color:#000; transform:translateY(-1px); }
+.btn-outline { background:transparent; color:var(--electric); border:1px solid var(--border-e); }
+.btn-outline:hover { border-color:var(--electric); background:rgba(0,212,255,.07); color:var(--electric); }
+.btn-full { width:100%; justify-content:center; }
+
+/* ── SECTIONS ────────────────────────────────────────────── */
+.section { padding:64px 0; }
+.section-alt { background:var(--bg2); }
+.section-header { margin-bottom:40px; }
+.section-header .lead { margin-top:12px; }
+@media(min-width:640px){ .section{ padding:80px 0; } .section-header{ margin-bottom:48px; } }
+@media(min-width:1024px){ .section{ padding:100px 0; } .section-header{ margin-bottom:60px; } }
+
+/* ── HERO ────────────────────────────────────────────────── */
+.hero {
+  min-height:100svh;
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  text-align:center;
+  padding:calc(var(--nav-h) + 48px) var(--px) 60px;
+  background:
+    radial-gradient(ellipse 120% 50% at 50% -10%, rgba(0,212,255,.09) 0%, transparent 60%),
+    radial-gradient(ellipse 80% 40% at 80% 90%, rgba(123,47,255,.06) 0%, transparent 55%),
+    linear-gradient(180deg, var(--bg) 0%, var(--bg2) 100%);
+  position:relative; overflow:hidden;
+}
+.hero::after {
+  content:''; position:absolute; bottom:0; left:0; right:0; height:120px;
+  background:linear-gradient(0deg, var(--bg2), transparent);
+  pointer-events:none;
+}
+.hero-badge {
+  display:inline-flex; align-items:center; gap:8px;
+  font-size:10px; font-weight:600; letter-spacing:2px; text-transform:uppercase;
+  color:var(--electric); border:1px solid var(--border-e);
+  border-radius:100px; padding:6px 16px; margin-bottom:28px;
+  background:rgba(0,212,255,.05);
+}
+@media(min-width:640px){ .hero-badge{ font-size:11px; padding:7px 22px; margin-bottom:36px; } }
+.hero-badge-dot {
+  width:6px; height:6px; border-radius:50%; background:var(--electric);
+  flex-shrink:0; animation:pulse-dot 2s ease-in-out infinite;
+}
+@keyframes pulse-dot { 0%,100%{ opacity:1; transform:scale(1); } 50%{ opacity:.4; transform:scale(1.4); } }
+.hero-h1 {
+  font-family:var(--ff-d);
+  font-size:clamp(52px, 13vw, 108px);
+  letter-spacing:2px; line-height:.94;
+  color:var(--white); margin-bottom:20px;
+}
+@media(min-width:480px){ .hero-h1{ letter-spacing:3px; margin-bottom:24px; } }
+@media(min-width:1024px){ .hero-h1{ margin-bottom:28px; } }
+.hero-sub {
+  font-size:clamp(14px, 3.5vw, 18px);
+  color:var(--silver); font-weight:300; line-height:1.75;
+  max-width:560px; margin:0 auto 36px;
+}
+@media(min-width:640px){ .hero-sub{ margin-bottom:44px; } }
+.hero-sub strong { color:var(--white); font-weight:500; }
+.hero-btns {
+  display:flex; flex-direction:column; gap:12px;
+  width:100%; max-width:320px; margin-bottom:48px;
+}
+@media(min-width:480px){
+  .hero-btns { flex-direction:row; gap:12px; max-width:none; width:auto; margin-bottom:56px; }
+}
+@media(min-width:640px){ .hero-btns{ margin-bottom:64px; gap:14px; } }
+
+/* Trust bar */
+.hero-trust {
+  display:grid; grid-template-columns:1fr 1fr;
+  width:100%; max-width:860px;
+  border:1px solid var(--border); border-radius:var(--r); overflow:hidden;
+}
+.trust-item {
+  padding:14px 12px; text-align:center;
+  border-right:1px solid var(--border); border-bottom:1px solid var(--border);
+}
+.trust-item:nth-child(2) { border-right:none; }
+.trust-item:nth-child(3) { border-bottom:none; }
+.trust-item:nth-child(4) { border-right:none; border-bottom:none; }
+.trust-item strong { display:block; font-size:11px; font-weight:600; color:var(--white); margin-bottom:2px; }
+.trust-item span { font-size:10px; color:var(--silver2); }
+@media(min-width:480px){
+  .trust-item { padding:16px 16px; }
+  .trust-item strong { font-size:12px; }
+  .trust-item span { font-size:11px; }
+}
+@media(min-width:768px){
+  .hero-trust { grid-template-columns:repeat(4,1fr); }
+  .trust-item { border-bottom:none !important; }
+  .trust-item:nth-child(2) { border-right:1px solid var(--border); }
+  .trust-item:nth-child(4) { border-right:none; }
+  .trust-item:nth-child(3) { border-right:1px solid var(--border); }
+  .trust-item { padding:18px 16px; }
+}
+@media(min-width:1024px){ .trust-item{ padding:18px 20px; } }
+
+/* ── STATS BAR ───────────────────────────────────────────── */
+.stats-bar {
+  display:grid; grid-template-columns:1fr 1fr;
+  border-top:1px solid var(--border); border-bottom:1px solid var(--border);
+  background:var(--bg2);
+}
+.stat-cell {
+  padding:28px 20px;
+  border-right:1px solid var(--border);
+  border-bottom:1px solid var(--border);
+  display:flex; flex-direction:column; gap:8px;
+}
+.stat-cell:nth-child(2) { border-right:none; }
+.stat-cell:nth-child(3) { border-bottom:none; }
+.stat-cell:nth-child(4) { border-right:none; border-bottom:none; }
+.stat-n {
+  font-family:var(--ff-d); font-size:44px; letter-spacing:1px;
+  color:var(--electric); line-height:1;
+}
+.stat-meta strong { display:block; font-size:13px; font-weight:500; color:var(--white); margin-bottom:4px; }
+.stat-meta p { font-size:12px; color:var(--silver); line-height:1.5; }
+@media(min-width:640px){
+  .stat-cell { padding:32px 24px; flex-direction:row; gap:16px; align-items:flex-start; }
+  .stat-n { font-size:48px; flex-shrink:0; }
+}
+@media(min-width:768px){
+  .stats-bar { grid-template-columns:repeat(4,1fr); }
+  .stat-cell { border-bottom:none !important; }
+  .stat-cell:nth-child(2) { border-right:1px solid var(--border); }
+  .stat-cell:nth-child(3) { border-right:1px solid var(--border); }
+  .stat-cell:nth-child(4) { border-right:none; }
+}
+@media(min-width:1024px){
+  .stat-cell { padding:44px 32px; gap:20px; }
+  .stat-n { font-size:52px; }
+  .stat-meta strong { font-size:14px; }
+  .stat-meta p { font-size:13px; }
+}
+
+/* ── PAIN GRID ───────────────────────────────────────────── */
+.pain-grid {
+  display:grid; grid-template-columns:1fr;
+  gap:3px; border-radius:var(--r-lg); overflow:hidden;
+}
+.pain-card { background:var(--card); padding:28px 24px; transition:background .2s; }
+.pain-card:hover { background:var(--card2); }
+.pain-card-title { font-size:15px; font-weight:600; color:var(--white); margin-bottom:8px; line-height:1.45; }
+.pain-card-body { font-size:14px; color:var(--silver); line-height:1.7; }
+@media(min-width:640px){ .pain-card{ padding:32px 28px; } }
+@media(min-width:768px){
+  .pain-grid { grid-template-columns:repeat(2,1fr); }
+  .pain-card { padding:36px 32px; }
+}
+@media(min-width:1024px){ .pain-card{ padding:40px 36px; } }
+
+/* ── STEPS ROW ───────────────────────────────────────────── */
+.steps-row {
+  display:flex; flex-direction:column;
+  gap:3px; margin-top:40px;
+}
+.step {
+  background:var(--card); padding:28px 24px;
+  transition:background .2s;
+}
+.steps-row .step:first-child { border-radius:var(--r) var(--r) 0 0; }
+.steps-row .step:last-child  { border-radius:0 0 var(--r) var(--r); }
+.step:hover { background:var(--card2); }
+.step-num { font-family:var(--ff-d); font-size:48px; letter-spacing:2px; color:rgba(0,212,255,.12); line-height:1; margin-bottom:10px; }
+.step-tag { font-size:10px; font-weight:700; letter-spacing:2.5px; text-transform:uppercase; color:var(--electric); margin-bottom:6px; }
+.step-title { font-size:15px; font-weight:600; color:var(--white); margin-bottom:8px; }
+.step-body { font-size:13px; color:var(--silver); line-height:1.65; }
+@media(min-width:640px){
+  .steps-row { flex-direction:row; flex-wrap:wrap; }
+  .step { flex:1 1 calc(50% - 2px); border-radius:0 !important; }
+  .steps-row .step:first-child { border-radius:var(--r) 0 0 0 !important; }
+  .steps-row .step:nth-child(2) { border-radius:0 var(--r) 0 0 !important; }
+  .steps-row .step:nth-last-child(2) { border-radius:0 0 0 var(--r) !important; }
+  .steps-row .step:last-child { border-radius:0 0 var(--r) 0 !important; }
+}
+@media(min-width:1024px){
+  .steps-row { flex-wrap:nowrap; }
+  .step { flex:1; border-radius:0 !important; padding:32px 22px; }
+  .steps-row .step:first-child { border-radius:var(--r) 0 0 var(--r) !important; }
+  .steps-row .step:last-child  { border-radius:0 var(--r) var(--r) 0 !important; }
+  .step-num { font-size:56px; }
+}
+
+/* ── BENEFITS ────────────────────────────────────────────── */
+.benefits-grid { display:grid; grid-template-columns:1fr; gap:14px; }
+.benefit {
+  background:var(--card); border-radius:var(--r-lg);
+  padding:28px 24px; border-top:3px solid rgba(0,212,255,.25);
+  transition:border-color .2s, background .2s;
+}
+.benefit:hover { border-top-color:var(--electric); background:var(--card2); }
+.benefit.wide { border-top-color:var(--electric); }
+.benefit-label { font-size:10px; font-weight:700; letter-spacing:2.5px; text-transform:uppercase; color:var(--electric); margin-bottom:10px; }
+.benefit-title { font-size:17px; font-weight:600; color:var(--white); margin-bottom:10px; }
+.benefit-body { font-size:14px; color:var(--silver); line-height:1.75; }
+.benefit-stat { font-family:var(--ff-d); font-size:36px; letter-spacing:1px; color:var(--electric); margin-top:14px; display:flex; align-items:baseline; gap:10px; }
+.benefit-stat small { font-family:var(--ff-b); font-size:13px; color:var(--silver); font-weight:300; }
+@media(min-width:640px){ .benefit{ padding:32px 28px; } }
+@media(min-width:768px){ .benefits-grid{ grid-template-columns:repeat(2,1fr); } .benefit{ padding:36px; } .benefit-title{ font-size:18px; } }
+@media(min-width:1024px){ .benefit-title{ font-size:19px; } .benefit-stat{ font-size:40px; } }
+
+/* ── ICA GRID ────────────────────────────────────────────── */
+.ica-grid { display:grid; grid-template-columns:1fr; gap:14px; }
+.ica {
+  background:var(--card); border-radius:var(--r-lg);
+  padding:32px 24px; border-bottom:3px solid transparent;
+  transition:all .25s; display:flex; flex-direction:column; gap:14px;
+}
+.ica:hover { background:var(--card2); border-bottom-color:var(--electric); }
+.ica-title { font-family:var(--ff-d); font-size:26px; letter-spacing:1px; color:var(--white); }
+.ica-body { font-size:14px; color:var(--silver); line-height:1.75; flex:1; }
+.ica-tags { list-style:none; display:flex; flex-wrap:wrap; gap:8px; }
+.ica-tags li { font-size:10px; font-weight:600; letter-spacing:1px; text-transform:uppercase; background:rgba(0,212,255,.07); color:var(--electric); padding:5px 10px; border-radius:3px; }
+@media(min-width:640px){ .ica{ padding:36px 28px; } .ica-title{ font-size:28px; } }
+@media(min-width:768px){ .ica-grid{ grid-template-columns:repeat(2,1fr); } }
+@media(min-width:1024px){ .ica-grid{ grid-template-columns:repeat(3,1fr); } .ica{ padding:40px 32px; } .ica-title{ font-size:30px; } }
+
+/* ── GUARANTEE ───────────────────────────────────────────── */
+.guarantee-wrap {
+  background:linear-gradient(135deg, rgba(0,212,255,.07) 0%, rgba(123,47,255,.07) 100%);
+  border:1px solid var(--border-e); border-radius:16px;
+  padding:48px 24px; text-align:center;
+}
+@media(min-width:640px){ .guarantee-wrap{ padding:56px 36px; border-radius:20px; } }
+@media(min-width:1024px){ .guarantee-wrap{ padding:72px 48px; } }
+.guar-num { font-family:var(--ff-d); font-size:clamp(80px,18vw,128px); letter-spacing:4px; color:var(--electric); line-height:1; }
+.guar-label { font-family:var(--ff-d); font-size:clamp(24px,6vw,44px); letter-spacing:2px; color:var(--white); margin-bottom:6px; }
+.guar-sub { font-family:var(--ff-d); font-size:clamp(14px,3.5vw,26px); letter-spacing:2px; color:var(--silver); margin-bottom:20px; }
+@media(min-width:640px){ .guar-sub{ margin-bottom:28px; } }
+.guar-body { font-size:15px; color:var(--silver); font-weight:300; max-width:580px; margin:0 auto 32px; line-height:1.75; }
+@media(min-width:640px){ .guar-body{ font-size:16px; margin-bottom:40px; } }
+.guar-btns { display:flex; flex-direction:column; gap:12px; align-items:center; }
+@media(min-width:480px){ .guar-btns{ flex-direction:row; justify-content:center; gap:14px; } }
+
+/* ── CTA BLOCK ───────────────────────────────────────────── */
+.cta-block { text-align:center; }
+.cta-btns { display:flex; flex-direction:column; gap:12px; align-items:center; margin-bottom:20px; }
+@media(min-width:480px){ .cta-btns{ flex-direction:row; justify-content:center; gap:14px; margin-bottom:24px; } }
+.cta-dots { display:flex; flex-wrap:wrap; gap:8px; justify-content:center; align-items:center; font-size:12px; color:var(--silver2); }
+@media(min-width:640px){ .cta-dots{ gap:16px; font-size:13px; } }
+.cta-dot-sep { color:rgba(168,184,200,.3); }
+
+/* ── PAGE HERO (inner pages) ─────────────────────────────── */
+.page-hero {
+  padding:calc(var(--nav-h) + 48px) var(--px) 56px;
+  background:
+    radial-gradient(ellipse 120% 60% at 20% 50%, rgba(0,212,255,.06) 0%, transparent 55%),
+    linear-gradient(180deg, var(--bg) 0%, var(--bg2) 100%);
+  border-bottom:1px solid var(--border);
+}
+@media(min-width:768px){ .page-hero{ padding:calc(var(--nav-h) + 64px) var(--px) 64px; } }
+@media(min-width:1024px){ .page-hero{ padding:calc(var(--nav-h) + 80px) var(--px) 72px; } }
+.breadcrumb { display:flex; align-items:center; gap:8px; font-size:11px; color:var(--silver2); margin-bottom:18px; flex-wrap:wrap; }
+.breadcrumb a { color:var(--silver2); }
+.breadcrumb a:hover { color:var(--electric); }
+.breadcrumb-sep { color:rgba(168,184,200,.25); }
+.page-h1 {
+  font-family:var(--ff-d);
+  font-size:clamp(42px,10vw,84px);
+  letter-spacing:2px; line-height:.95;
+  color:var(--white); margin-bottom:18px;
+}
+@media(min-width:480px){ .page-h1{ letter-spacing:3px; margin-bottom:22px; } }
+.page-sub { font-size:15px; color:var(--silver); font-weight:300; line-height:1.75; max-width:680px; }
+@media(min-width:640px){ .page-sub{ font-size:16px; } }
+@media(min-width:1024px){ .page-sub{ font-size:17px; } }
+.page-stats {
+  display:grid; grid-template-columns:repeat(2,1fr);
+  margin-top:36px; border:1px solid var(--border); border-radius:var(--r); overflow:hidden;
+  width:100%;
+}
+.page-stat { padding:12px 16px; border-right:1px solid var(--border); border-bottom:1px solid var(--border); }
+.page-stat:nth-child(2) { border-right:none; }
+.page-stat:nth-child(3) { border-bottom:none; }
+.page-stat:nth-child(4) { border-right:none; border-bottom:none; }
+.page-stat span { display:block; font-family:var(--ff-d); font-size:18px; letter-spacing:1px; color:var(--electric); }
+.page-stat p { font-size:10px; color:var(--silver2); margin-top:2px; }
+@media(min-width:640px){
+  .page-stats { grid-template-columns:repeat(4,1fr); width:fit-content; }
+  .page-stat { border-bottom:none !important; }
+  .page-stat:nth-child(2) { border-right:1px solid var(--border); }
+  .page-stat:nth-child(3) { border-right:1px solid var(--border); }
+  .page-stat:nth-child(4) { border-right:none; }
+  .page-stat { padding:14px 24px; }
+  .page-stat span { font-size:20px; }
+  .page-stat p { font-size:11px; }
+}
+
+/* ── INFRA STEPS ─────────────────────────────────────────── */
+.infra-list { display:flex; flex-direction:column; gap:3px; margin-top:40px; }
+@media(min-width:1024px){ .infra-list{ margin-top:56px; } }
+.infra-item {
+  display:grid; grid-template-columns:60px 1fr;
+  background:var(--card); overflow:hidden; transition:background .2s;
+}
+.infra-list .infra-item:first-child { border-radius:var(--r-lg) var(--r-lg) 0 0; }
+.infra-list .infra-item:last-child  { border-radius:0 0 var(--r-lg) var(--r-lg); }
+.infra-item:hover { background:var(--card2); }
+.infra-num { display:flex; align-items:center; justify-content:center; border-right:1px solid var(--border); padding:24px 8px; }
+.infra-num span { font-family:var(--ff-d); font-size:30px; color:rgba(0,212,255,.16); line-height:1; }
+.infra-body { padding:24px 20px; }
+.infra-tag { font-size:9px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--electric); margin-bottom:6px; }
+.infra-title { font-size:17px; font-weight:600; color:var(--white); margin-bottom:10px; }
+.infra-body>p { font-size:14px; color:var(--silver); line-height:1.75; margin-bottom:16px; }
+.infra-checks { display:flex; flex-wrap:wrap; gap:8px; }
+.check-item { font-size:12px; color:var(--silver); display:flex; align-items:center; gap:6px; background:rgba(255,255,255,.04); border-radius:4px; padding:5px 10px; }
+.check-mark { color:var(--electric); font-size:10px; }
+@media(min-width:640px){
+  .infra-item { grid-template-columns:80px 1fr; }
+  .infra-num { padding:32px 12px; }
+  .infra-num span { font-size:40px; }
+  .infra-body { padding:32px 32px; }
+  .infra-tag { font-size:10px; }
+  .infra-title { font-size:19px; margin-bottom:12px; }
+  .infra-body>p { font-size:15px; }
+}
+@media(min-width:1024px){
+  .infra-item { grid-template-columns:100px 1fr; }
+  .infra-num { padding:40px 16px; }
+  .infra-num span { font-size:52px; }
+  .infra-body { padding:40px 52px; }
+  .infra-title { font-size:22px; }
+}
+
+/* ── TECH CARDS ──────────────────────────────────────────── */
+.tech-grid { display:grid; grid-template-columns:1fr; gap:14px; margin-top:40px; }
+@media(min-width:640px){ .tech-grid{ grid-template-columns:1fr 1fr; } }
+@media(min-width:1024px){ .tech-grid{ grid-template-columns:repeat(3,1fr); margin-top:56px; } }
+.tech-card { background:var(--card); border-radius:var(--r-lg); padding:28px 24px; }
+@media(min-width:640px){ .tech-card{ padding:32px 28px; } }
+@media(min-width:1024px){ .tech-card{ padding:36px; } }
+.tech-icon { width:40px; height:40px; background:rgba(0,212,255,.1); border-radius:var(--r); display:flex; align-items:center; justify-content:center; font-size:18px; margin-bottom:16px; }
+.tech-title { font-size:17px; font-weight:600; color:var(--white); margin-bottom:10px; }
+.tech-body { font-size:14px; color:var(--silver); line-height:1.7; }
+
+/* ── INTEGRATIONS ────────────────────────────────────────── */
+.integrations { margin-top:40px; padding-top:36px; border-top:1px solid var(--border); }
+@media(min-width:1024px){ .integrations{ margin-top:56px; padding-top:44px; } }
+.integrations-label { font-size:10px; font-weight:600; letter-spacing:2px; text-transform:uppercase; color:var(--silver2); margin-bottom:14px; }
+.integrations-badges { display:flex; flex-wrap:wrap; gap:8px; }
+.badge { font-size:11px; font-weight:500; background:rgba(255,255,255,.04); color:var(--silver); border:1px solid var(--border); border-radius:4px; padding:6px 12px; }
+@media(min-width:640px){ .badge{ font-size:12px; padding:7px 16px; } }
+
+/* ── PRICING TIERS ───────────────────────────────────────── */
+.pricing-tiers { display:grid; grid-template-columns:1fr; gap:20px; margin-top:40px; }
+@media(min-width:768px){ .pricing-tiers{ grid-template-columns:1fr 1fr; gap:24px; margin-top:56px; } }
+.tier-card { border:1px solid var(--border); border-radius:var(--r-lg); overflow:hidden; display:flex; flex-direction:column; }
+.tier-featured { border-color:var(--electric); }
+.tier-popular { background:var(--electric); color:#000; font-size:10px; font-weight:700; letter-spacing:2px; text-transform:uppercase; padding:7px 20px; text-align:center; }
+.tier-head { background:var(--card); padding:28px 28px; border-bottom:1px solid var(--border); }
+.tier-featured .tier-head { background:linear-gradient(135deg,rgba(0,212,255,.09) 0%,rgba(123,47,255,.09) 100%); }
+@media(min-width:640px){ .tier-head{ padding:36px; } }
+.tier-badge { font-size:10px; font-weight:600; letter-spacing:2px; text-transform:uppercase; color:var(--electric); margin-bottom:14px; }
+.tier-price { font-family:var(--ff-d); font-size:clamp(64px,12vw,80px); letter-spacing:2px; color:var(--white); line-height:1; }
+.tier-freq { font-size:13px; color:var(--silver); margin-top:4px; margin-bottom:14px; }
+.tier-desc { font-size:14px; color:var(--silver); line-height:1.7; }
+.tier-body { padding:28px; background:var(--card); flex:1; display:flex; flex-direction:column; gap:24px; }
+@media(min-width:640px){ .tier-body{ padding:36px; gap:28px; } }
+.tier-features { list-style:none; display:flex; flex-direction:column; gap:12px; flex:1; }
+.tier-features li { font-size:14px; color:var(--silver); display:flex; align-items:flex-start; gap:10px; line-height:1.5; }
+.feat-check { color:var(--electric); font-size:13px; flex-shrink:0; margin-top:2px; }
+
+/* Guarantee callout */
+.guarantee-callout {
+  display:flex; flex-direction:column; gap:28px;
+  background:var(--card); border-radius:var(--r-lg);
+  padding:28px 24px; margin-top:24px; border-left:4px solid var(--electric);
+}
+@media(min-width:640px){ .guarantee-callout{ padding:36px; gap:32px; } }
+@media(min-width:1024px){ .guarantee-callout{ flex-direction:row; align-items:center; padding:48px; gap:48px; margin-top:32px; } }
+.gc-title { font-family:var(--ff-d); font-size:clamp(26px,5vw,36px); letter-spacing:1px; color:var(--white); margin-bottom:12px; line-height:1; }
+.gc-body { font-size:14px; color:var(--silver); line-height:1.75; margin-bottom:14px; }
+.gc-note { font-size:13px; color:var(--silver2); line-height:1.65; }
+.gc-stats { display:grid; grid-template-columns:repeat(3,1fr); gap:3px; border-radius:var(--r); overflow:hidden; flex-shrink:0; }
+@media(min-width:1024px){ .gc-stats{ display:flex; flex-direction:column; min-width:180px; } }
+.gc-stat { background:var(--card2); padding:16px; text-align:center; }
+.gc-n { font-family:var(--ff-d); font-size:36px; color:var(--electric); line-height:1; }
+.gc-l { font-size:10px; color:var(--silver); margin-top:3px; }
+@media(min-width:480px){ .gc-n{ font-size:40px; } .gc-stat{ padding:18px; } }
+@media(min-width:1024px){ .gc-n{ font-size:44px; } .gc-stat{ padding:20px 24px; } }
+
+/* ── FAQ ─────────────────────────────────────────────────── */
+.faq-list { margin-top:40px; display:flex; flex-direction:column; gap:3px; border-radius:var(--r-lg); overflow:hidden; }
+@media(min-width:1024px){ .faq-list{ margin-top:60px; } }
+.faq-item { background:var(--card); }
+.faq-q {
+  width:100%; background:none; border:none;
+  display:flex; justify-content:space-between; align-items:center; gap:16px;
+  padding:18px 20px; font-size:14px; font-weight:500;
+  color:var(--white); text-align:left; transition:background .2s;
+  -webkit-tap-highlight-color:transparent;
+}
+.faq-q:hover { background:var(--card2); }
+.faq-icon { font-size:20px; color:var(--electric); flex-shrink:0; line-height:1; transition:transform .3s; }
+.faq-item.open .faq-icon { transform:rotate(45deg); }
+.faq-a { max-height:0; overflow:hidden; padding:0 20px; font-size:14px; color:var(--silver); line-height:1.75; transition:max-height .35s ease, padding .35s ease; }
+.faq-item.open .faq-a { max-height:500px; padding:0 20px 20px; }
+@media(min-width:640px){
+  .faq-q { padding:22px 28px; font-size:15px; gap:20px; }
+  .faq-a { padding:0 28px; font-size:14px; }
+  .faq-item.open .faq-a { padding:0 28px 22px; }
+}
+@media(min-width:1024px){
+  .faq-q { padding:24px 32px; font-size:16px; }
+  .faq-a { padding:0 32px; }
+  .faq-item.open .faq-a { max-height:400px; padding:0 32px 24px; }
+}
+
+/* ── CONTACT PAGE ────────────────────────────────────────── */
+.contact-layout { display:grid; grid-template-columns:1fr; gap:40px; }
+@media(min-width:1024px){ .contact-layout{ grid-template-columns:1fr 1fr; gap:72px; align-items:start; } }
+.contact-aside { display:flex; flex-direction:column; gap:36px; }
+.c-block-title { font-size:15px; font-weight:600; color:var(--white); margin-bottom:10px; }
+.c-block p { font-size:14px; color:var(--silver); line-height:1.75; }
+@media(min-width:640px){ .c-block p{ font-size:15px; } }
+.demo-meta { display:flex; gap:12px; margin-top:16px; flex-wrap:wrap; }
+.demo-meta-item { background:var(--card); border-radius:var(--r); padding:14px 18px; flex:1; min-width:120px; }
+.dmi-label { font-size:9px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--silver2); margin-bottom:4px; }
+.dmi-val { font-family:var(--ff-d); font-size:20px; letter-spacing:1px; color:var(--white); }
+@media(min-width:640px){ .dmi-val{ font-size:22px; } .demo-meta-item{ padding:16px 22px; } }
+.contact-list { list-style:none; display:flex; flex-direction:column; gap:10px; margin-top:14px; }
+.contact-list li { font-size:14px; color:var(--silver); padding-left:20px; position:relative; line-height:1.55; }
+.contact-list li::before { content:'→'; position:absolute; left:0; color:var(--electric); font-size:12px; }
+.c-mini-faqs { display:flex; flex-direction:column; gap:16px; }
+.cmf-q { font-size:14px; font-weight:600; color:var(--white); margin-bottom:4px; }
+.cmf-a { font-size:13px; color:var(--silver); line-height:1.7; }
+
+/* Direct contact items */
+.direct-contacts { display:flex; flex-direction:column; gap:10px; margin-top:16px; }
+.direct-contact-item {
+  display:flex; align-items:center; gap:14px;
+  background:var(--card); border-radius:var(--r); padding:14px 16px;
+  text-decoration:none; transition:background .2s; border:1px solid var(--border);
+  -webkit-tap-highlight-color:transparent;
+}
+.direct-contact-item:hover { background:var(--card2); border-color:var(--border-e); }
+.dc-icon { font-size:18px; flex-shrink:0; width:32px; text-align:center; }
+.dc-label { font-size:10px; font-weight:600; letter-spacing:1px; text-transform:uppercase; color:var(--silver2); margin-bottom:2px; }
+.dc-val { font-size:13px; color:var(--white); font-weight:500; word-break:break-all; }
+@media(min-width:480px){ .dc-val{ font-size:14px; } }
+
+/* Form card */
+.form-card { background:var(--card); border-radius:var(--r-lg); overflow:hidden; border:1px solid var(--border); }
+.form-head { background:linear-gradient(135deg,rgba(0,212,255,.09) 0%,rgba(123,47,255,.09) 100%); padding:24px 24px; border-bottom:1px solid var(--border-e); }
+.form-head h2 { font-size:20px; font-weight:600; color:var(--white); margin-bottom:6px; }
+.form-head p { font-size:13px; color:var(--silver); }
+@media(min-width:640px){ .form-head{ padding:32px 36px; } .form-head h2{ font-size:24px; } .form-head p{ font-size:14px; } }
+.demo-form { padding:24px; display:flex; flex-direction:column; gap:18px; }
+@media(min-width:640px){ .demo-form{ padding:32px 36px; gap:20px; } }
+.form-row { display:grid; grid-template-columns:1fr; gap:16px; }
+@media(min-width:480px){ .form-row{ grid-template-columns:1fr 1fr; } }
+.form-group { display:flex; flex-direction:column; gap:6px; }
+.form-group label { font-size:11px; font-weight:600; letter-spacing:.5px; color:var(--silver); }
+.form-group input,.form-group select,.form-group textarea {
+  background:var(--bg3); border:1px solid var(--border);
+  border-radius:6px; padding:13px 14px;
+  color:var(--white); font-family:var(--ff-b); font-size:16px;
+  outline:none; transition:border-color .2s;
+  -webkit-appearance:none; appearance:none;
+  width:100%;
+}
+.form-group input::placeholder,.form-group textarea::placeholder { color:rgba(168,184,200,.3); }
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus { border-color:var(--electric); }
+.form-group select {
+  cursor:pointer;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23A8B8C8' fill='none' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat:no-repeat; background-position:right 14px center; padding-right:38px;
+}
+.form-group select option { background:var(--card); }
+.form-group textarea { resize:vertical; min-height:100px; }
+.form-submit { font-size:14px; padding:16px; letter-spacing:1.5px; }
+.form-disclaimer { font-size:11px; color:var(--silver2); text-align:center; line-height:1.6; }
+@media(min-width:640px){ .form-disclaimer{ font-size:12px; } }
+
+/* ── ABOUT PAGE ──────────────────────────────────────────── */
+.about-mission { display:grid; grid-template-columns:1fr; gap:36px; }
+@media(min-width:768px){ .about-mission{ grid-template-columns:1fr 1fr; gap:56px; align-items:start; } }
+@media(min-width:1024px){ .about-mission{ gap:64px; } }
+.mission-text .lead { margin-top:14px; }
+.bq { border-left:4px solid var(--electric); padding:22px 24px; background:var(--card); border-radius:0 var(--r-lg) var(--r-lg) 0; }
+.bq p { font-size:16px; color:var(--white); line-height:1.7; font-weight:300; font-style:italic; margin-bottom:14px; }
+.bq cite { font-size:11px; font-weight:600; letter-spacing:2px; text-transform:uppercase; color:var(--electric); font-style:normal; }
+@media(min-width:640px){ .bq{ padding:28px 32px; } .bq p{ font-size:18px; } }
+.what-grid { display:grid; grid-template-columns:1fr; gap:14px; margin-top:40px; }
+@media(min-width:640px){ .what-grid{ grid-template-columns:repeat(2,1fr); } }
+@media(min-width:1024px){ .what-grid{ grid-template-columns:repeat(3,1fr); margin-top:56px; } }
+.what-card { background:var(--card); border-radius:var(--r-lg); padding:28px 24px; }
+@media(min-width:640px){ .what-card{ padding:32px 28px; } }
+@media(min-width:1024px){ .what-card{ padding:36px 28px; } }
+.what-num { font-family:var(--ff-d); font-size:40px; color:rgba(0,212,255,.15); line-height:1; margin-bottom:10px; }
+.what-title { font-size:16px; font-weight:600; color:var(--white); margin-bottom:8px; }
+.what-body { font-size:14px; color:var(--silver); line-height:1.75; }
+.values-grid { display:grid; grid-template-columns:1fr; gap:14px; margin-top:40px; }
+@media(min-width:640px){ .values-grid{ grid-template-columns:repeat(2,1fr); } }
+@media(min-width:1024px){ .values-grid{ grid-template-columns:repeat(4,1fr); margin-top:56px; } }
+.value-card { background:var(--card); border-radius:var(--r-lg); padding:28px 24px; }
+.value-icon { font-size:26px; margin-bottom:14px; }
+.value-title { font-size:15px; font-weight:600; color:var(--white); margin-bottom:8px; }
+.value-body { font-size:14px; color:var(--silver); line-height:1.7; }
+.trust-cols { display:grid; grid-template-columns:1fr; gap:24px; margin-top:36px; }
+@media(min-width:640px){ .trust-cols{ grid-template-columns:repeat(2,1fr); } }
+@media(min-width:1024px){ .trust-cols{ grid-template-columns:repeat(3,1fr); margin-top:48px; } }
+.trust-col .trust-col-title { font-size:14px; font-weight:600; color:var(--white); margin-bottom:12px; }
+.trust-col p { font-size:14px; color:var(--silver); line-height:1.75; }
+
+/* Homepage About preview */
+.about-preview { display:grid; grid-template-columns:1fr; gap:40px; }
+@media(min-width:1024px){ .about-preview{ grid-template-columns:1fr 1fr; gap:72px; align-items:center; } }
+.about-preview-stats { display:grid; grid-template-columns:1fr 1fr; gap:3px; border-radius:var(--r-lg); overflow:hidden; }
+.astat { background:var(--card); padding:24px 20px; }
+@media(min-width:640px){ .astat{ padding:32px 28px; } }
+.astat-n { font-family:var(--ff-d); font-size:40px; letter-spacing:1px; color:var(--electric); line-height:1; margin-bottom:6px; }
+@media(min-width:640px){ .astat-n{ font-size:48px; } }
+.astat-l { font-size:12px; color:var(--silver); line-height:1.5; }
+@media(min-width:640px){ .astat-l{ font-size:13px; } }
+
+/* ── FOOTER ──────────────────────────────────────────────── */
+.footer { background:var(--bg2); border-top:1px solid var(--border); padding:48px var(--px) 36px; }
+@media(min-width:640px){ .footer{ padding:60px var(--px) 40px; } }
+@media(min-width:1024px){ .footer{ padding:72px var(--px) 44px; } }
+.footer-grid {
+  display:grid; grid-template-columns:1fr 1fr;
+  gap:32px; max-width:1180px; margin:0 auto 36px;
+}
+@media(min-width:768px){ .footer-grid{ grid-template-columns:2fr 1fr 1fr; gap:40px; } }
+@media(min-width:1024px){ .footer-grid{ grid-template-columns:2fr 1fr 1fr 1fr; gap:48px; margin-bottom:52px; } }
+.footer-brand { grid-column:1/-1; }
+@media(min-width:768px){ .footer-brand{ grid-column:1; } }
+.footer-logo { font-family:var(--ff-d); font-size:22px; letter-spacing:3px; color:var(--white); margin-bottom:10px; }
+@media(min-width:640px){ .footer-logo{ font-size:26px; letter-spacing:4px; } }
+.footer-logo span { color:var(--electric); }
+.footer-tagline { font-size:13px; color:var(--silver); line-height:1.75; max-width:280px; margin-bottom:6px; }
+.footer-credline { font-size:12px; color:var(--electric); font-weight:500; letter-spacing:.5px; }
+.footer-col-title { font-size:10px; font-weight:700; letter-spacing:2.5px; text-transform:uppercase; color:var(--silver2); margin-bottom:14px; }
+.footer-col a,.footer-col span { display:block; font-size:13px; color:rgba(168,184,200,.6); margin-bottom:8px; transition:color .2s; text-decoration:none; }
+.footer-col a:hover { color:var(--electric); }
+.footer-bottom { max-width:1180px; margin:0 auto; border-top:1px solid var(--border); padding-top:24px; display:flex; flex-direction:column; gap:6px; }
+.footer-bottom p { font-size:11px; color:rgba(168,184,200,.3); line-height:1.6; }
+@media(min-width:640px){ .footer-bottom p{ font-size:12px; } }
+
+/* ── SCROLL REVEAL ───────────────────────────────────────── */
+.sr { opacity:0; transform:translateY(24px); transition:opacity .6s ease, transform .6s ease; }
+.sr.in { opacity:1; transform:none; }
+.sr-d1 { transition-delay:.08s; }
+.sr-d2 { transition-delay:.16s; }
+.sr-d3 { transition-delay:.24s; }
+.sr-d4 { transition-delay:.32s; }
+
+/* Reduce motion for accessibility */
+@media(prefers-reduced-motion:reduce){
+  .sr { opacity:1; transform:none; transition:none; }
+  .hero-badge-dot { animation:none; }
+  * { transition-duration:.01ms !important; animation-duration:.01ms !important; }
+}
+
+/* ── SAFE AREAS (notch / home indicator) ─────────────────── */
+@supports(padding-bottom:env(safe-area-inset-bottom)){
+  .footer { padding-bottom:calc(44px + env(safe-area-inset-bottom)); }
+  .nav { padding-left:max(var(--px), env(safe-area-inset-left)); padding-right:max(var(--px), env(safe-area-inset-right)); }
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="theme-color" content="#080C16">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Request Received — Tempest Marketing</title>
+<link rel="stylesheet" href="../../style.css">
+<link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+<link rel="shortcut icon" href="../../favicon.svg">
+</head>
+<body>
+<nav class="nav" id="nav">
+  <a href="../../index.html" class="nav-logo">TEMPEST<span>MARKETING</span></a>
+  <div class="nav-links" id="nl">
+    <a href="../../index.html">Home</a><a href="../../infrastructure/index.html">How It Works</a><a href="../../about/index.html">About</a><a href="../../pricing/index.html">Pricing</a>
+    <a href="../../contact/index.html" class="nav-btn">Book a Call</a>
+  </div>
+  <button class="hamburger" id="hb" aria-label="Menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<section class="hero" style="min-height:80vh">
+  <div class="hero-badge"><span class="hero-badge-dot"></span>Submission Confirmed</div>
+  <h1 class="hero-h1" style="font-size:clamp(44px,7vw,80px)">Request Received.<br><span class="e">We'll Be in Touch.</span></h1>
+  <p class="hero-sub" style="max-width:520px">Thank you for reaching out to Tempest Marketing. A member of our team will contact you within one business day to schedule your 30-minute strategy session.</p>
+  <div class="hero-btns">
+    <a href="../../index.html" class="btn btn-outline btn-lg">← Back to Home</a>
+    <a href="../../pricing/index.html" class="btn btn-outline btn-lg">View Pricing →</a>
+  </div>
+  <div style="margin-top:32px;font-size:13px;color:var(--silver2)">Questions in the meantime? Call us at <a href="tel:+13074004521" style="color:var(--electric)">+1 (307) 400-4521</a></div>
+</section>
+<script src="../../app.js"></script>
+</body>
+</html>
